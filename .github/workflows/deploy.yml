@@ -1,0 +1,49 @@
+name: deploy
+  
+on:       
+
+    
+  workflow_dispatch:
+    inputs:
+      workspace:
+        type: string
+        required: true
+        default: 'PBIP Demo'
+      environment:
+        type: choice        
+        required: true
+        default: 'DEV'
+        options: 
+        - DEV   
+        - PRD 
+  
+env:            
+  environment_name: ${{ github.event.inputs.environment }}  
+  workspace_name: ${{ github.event.inputs.workspace }}  
+
+jobs:
+
+  deploy:    
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.12"
+
+      - name: Install Fabric CICD
+        run: |
+          python -m pip install fabric-cicd
+
+      - name: Run Deployment Script 
+        env:
+          FABRIC_CLIENT_ID: ${{ secrets.FABRIC_CLIENT_ID }}
+          FABRIC_CLIENT_SECRET: ${{ secrets.FABRIC_CLIENT_SECRET }}
+          FABRIC_TENANT_ID: ${{ secrets.FABRIC_TENANT_ID }}          
+        run: 
+          python deploy.py --spn-auth true --workspace "$workspace_name" --environment $environment_name --src "./src"
+      

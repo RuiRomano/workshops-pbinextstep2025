@@ -1,0 +1,54 @@
+expression HttpSource =
+		"https://raw.githubusercontent.com/pbi-tools/sales-sample/data/" meta [
+			IsParameterQuery = true,
+			Type = "Text",
+			IsParameterQueryRequired = true
+		]
+	lineageTag: 39c7bef4-452b-4b29-846c-f788ef1af01f
+
+	annotation PBI_ResultType = Text
+
+expression RangeStart =
+		#datetime(2020, 1, 1, 0, 0, 0) meta [
+			IsParameterQuery = true,
+			List = {#datetime(2020, 1, 1, 0, 0, 0)},
+			DefaultValue = #datetime(2020, 1, 1, 0, 0, 0),
+			Type = "DateTime",
+			IsParameterQueryRequired = true
+		]
+	lineageTag: a1a6bc94-b59e-4ec1-9b6d-cd637ebafff5
+
+	annotation PBI_ResultType = DateTime
+
+expression RangeEnd =
+		#datetime(2024, 12, 31, 0, 0, 0) meta [
+			IsParameterQuery = true,
+			List = {#datetime(2023, 12, 31, 0, 0, 0)},
+			DefaultValue = #datetime(2023, 12, 31, 0, 0, 0),
+			Type = "DateTime",
+			IsParameterQueryRequired = true
+		]
+	lineageTag: 3230a904-a045-4d7e-9424-64fc69c93735
+
+	annotation PBI_ResultType = DateTime
+
+	annotation PBI_NavigationStepName = Navigation
+
+/// Dummy parameter to simulate data from different servers
+expression Environment =
+		"DEV" meta [
+			IsParameterQuery = true,
+			List = {"DEV", "QUAL", "PRD"},
+			DefaultValue = "DEV",
+			Type = "Text",
+			IsParameterQueryRequired = true
+		]
+	lineageTag: 64edd943-1a90-4438-b62f-bb95a9da1510
+
+	annotation PBI_ResultType = Text
+
+expression Randomizer = 0.6 meta [IsParameterQuery = true, Type = "Number", IsParameterQueryRequired = true]
+	lineageTag: c92d2f56-fbbe-4162-b5ce-373932bf5cf2
+
+	annotation PBI_ResultType = Number
+
