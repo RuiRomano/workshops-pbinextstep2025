@@ -1,0 +1,17 @@
+﻿{
+    "name": "Company_Purple",
+    "dataColors": [
+        "#5F49F2",
+        "#527AF2",
+        "#F2B807",
+        "#F28907",
+        "#FF7F6D",
+        "#F9C733",
+        "#A3B7F5",
+        "#A89CF8"
+    ],
+    "tableAccent": "#262A76",
+    "maximum": "#262A76",
+    "center": "#8E1F20",
+    "minimum": "#F1F1F1"
+}

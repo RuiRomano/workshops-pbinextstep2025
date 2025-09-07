@@ -1,0 +1,72 @@
+table 'Time Intelligence'	
+
+	calculationGroup
+		precedence: 1
+
+		calculationItem YTD =
+				CALCULATE (
+				    SELECTEDMEASURE (),
+				    DATESYTD ( 'Calendar'[Date] )
+				)
+
+		calculationItem QTD =
+				
+				CALCULATE (
+				    SELECTEDMEASURE (),
+				    DATESQTD ( 'Calendar'[Date] )
+				)
+
+		calculationItem MTD =
+				CALCULATE (
+				    SELECTEDMEASURE (),
+				    DATESMTD ( 'Calendar'[Date] )
+				)
+
+		calculationItem PY =
+				
+				CALCULATE (
+				    SELECTEDMEASURE (),
+				    SAMEPERIODLASTYEAR ( 'Calendar'[Date] )
+				)
+
+		calculationItem YOY% =
+				
+				DIVIDE (
+				    CALCULATE (
+				        SELECTEDMEASURE (),
+				        'Time Intelligence'[Show as] = "YOY"
+				    ),
+				    CALCULATE (
+				        SELECTEDMEASURE (),
+				        'Time Intelligence'[Show as] = "PY"
+				    )
+				)
+
+			formatStringDefinition = "#,##0.00%"
+
+		calculationItem YOY =
+				
+				SELECTEDMEASURE ()
+				    - CALCULATE (
+				        SELECTEDMEASURE (),
+				        'Time intelligence'[Show as] = "PY"
+				    )
+
+		calculationItem Current = SELECTEDMEASURE()
+
+	column 'Show as'
+		dataType: string		
+		summarizeBy: none
+		sourceColumn: Name
+		sortByColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordinal
+		dataType: int64
+		formatString: 0		
+		summarizeBy: none
+		sourceColumn: Ordinal
+
+		annotation SummarizationSetBy = User
+

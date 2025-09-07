@@ -1,0 +1,17 @@
+﻿{
+    "name": "Company_Blue",
+    "dataColors": [
+        "#262A76",
+        "#234990",
+        "#2F8AC3",
+        "#26B0D2",
+        "#FFC1CB",
+        "#EB5559",
+        "#AE3535",
+        "#8E1F20"        
+    ],
+    "tableAccent": "#262A76",
+    "maximum": "#262A76",
+    "center": "#8E1F20",
+    "minimum": "#F1F1F1"
+}

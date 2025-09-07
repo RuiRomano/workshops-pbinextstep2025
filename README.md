@@ -27,14 +27,19 @@ By the end of this workshop, you will:
   - Fabric Capacity or Trial
 - Software
   - [Power BI Desktop](https://pbi.onl/download)
-  - [Visual Studio Code](https://code.visualstudio.com/download)
   - [Git for Windows](https://gitforwindows.org/)
+  - [Visual Studio Code](https://code.visualstudio.com/download)
+    - Install the following extensions in Visual Studio Code:
+      - [TMDL extension](https://marketplace.visualstudio.com/items?itemName=analysis-services.TMDL)
+      - [Microsoft Fabric extension](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric)
+      - [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
+      - [GitHub Copilot chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat)  
 
 ## Agenda
 
 | Topic | Content | Labs | Time |
 |-------|---------|------|------|
-| **Advanced Power BI Development** | • Power BI Project files (PBIP)<br>• TMDL<br>• PBIR<br>• AI & PBIP | [Lab 1 - Introduction to Power BI Project Files](.labs/lab1/lab1.md)<br>[Lab 2 - PBIP & AI](.labs/lab2/lab2.md)  | 9:00 - 12:00 |
+| **Advanced Power BI Development** | • What is PBIP?<br>• TMDL<br>• PBIR<br>• Automation with AI | [Lab 1 - Power BI Project (PBIP) fundamentals](labs/lab1/lab1.md)<br>[Lab 2 - PBIP & AI](labs/lab2/lab2.md)  | 9:00 - 12:00 |
 | **Power BI & DevOps** | TBD | TBD| 13:30 - 17:00 |
 
 ## Resources
