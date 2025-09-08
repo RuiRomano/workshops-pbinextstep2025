@@ -23,8 +23,10 @@ By the end of this workshop, you will:
 - Licensing
   - Access to a Fabric / Power BI tenant
     - You can use your existing organizational tenant but you must have admin permissions.
-  - Power BI Pro license
-  - Fabric Capacity or Trial
+    - Power BI Pro license
+  - Access to a Fabric Capacity or [Trial](https://learn.microsoft.com/en-us/fabric/fundamentals/fabric-trial)
+  - [Github account](https://github.com/signup)
+  - [GitHub Copilot Trial](https://github.com/github-copilot/pro)
 - Software
   - [Power BI Desktop](https://pbi.onl/download)
   - [Git for Windows](https://gitforwindows.org/)
