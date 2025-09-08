@@ -6,17 +6,17 @@ We’ll show you how to accelerate your Power BI development using TMDL and PBIR
 
 You’ll also learn how to bring modern DevOps practices into your BI projects, from seamless CI/CD pipelines to automated deployments, using both built-in features and innovative community-driven solutions.
 
-Whether you’re a BI developer or a data professional looking to modernize your workflow, this workshop will equip you with practical techniques to take your Power BI projects within Microsoft Fabric to the next level.
+## Get started
 
-Learn from people who are directly involved in the design of Power BI developer mode and ask your questions.
+- Clone or download this repo to your machine.
+- Ensure you met all the [Requirements](#requirements) before starting the labs.
 
-By the end of this workshop, you will:
+## Agenda
 
-- Gain a solid understanding of Power BI Project file formats (PBIP, TMDL, PBIR) and how they support modern, scalable development workflows.
-
-- Learn how to effectively leverage AI to accelerate and enhance Power BI development, with hands-on, practical examples.
-
-- Understand the value of applying DevOps and CI/CD practices to Power BI projects and walk away with actionable solutions—both out-of-the-box and community-driven.
+| Topic | Content | Labs | Time |
+|-------|---------|------|------|
+| **Advanced Power BI Development** | • What is PBIP?<br>• TMDL<br>• PBIR<br>• Automation with AI | [Lab 1 - Power BI Project (PBIP) fundamentals](labs/lab1/lab1.md)<br>[Lab 2 - PBIP & AI](labs/lab2/lab2.md)  | 9:00 - 12:00 |
+| **Power BI & DevOps** | TBD | TBD| 13:30 - 17:00 |
 
 ## Requirements
 
@@ -39,14 +39,8 @@ By the end of this workshop, you will:
       - [Microsoft PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)  
    - [Git for Windows](https://gitforwindows.org/)
 
-## Agenda
-
-| Topic | Content | Labs | Time |
-|-------|---------|------|------|
-| **Advanced Power BI Development** | • What is PBIP?<br>• TMDL<br>• PBIR<br>• Automation with AI | [Lab 1 - Power BI Project (PBIP) fundamentals](labs/lab1/lab1.md)<br>[Lab 2 - PBIP & AI](labs/lab2/lab2.md)  | 9:00 - 12:00 |
-| **Power BI & DevOps** | TBD | TBD| 13:30 - 17:00 |
-
-## Resources
-
 ## FAQ
 
+**Q: I don't have access to Power BI license and / or Fabric Capacity.**
+
+**A:** Ask the workshop instructors for a demo account.
