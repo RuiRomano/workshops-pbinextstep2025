@@ -114,8 +114,9 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
    ![desktop publish](resources/img/desktopPublish.png)
 3. The workspace should now have a new report and semantic model inside.
    
-    > [!TIP]
-    > Notice that the semantic model was published with same name of the report even though the semantic model `.platform` file has a different `displayName`. This is by-design because currently Power BI Desktop **Publish** operation is using a PBIX behind the scenes. 
+> [!TIP]
+> Notice that the semantic model was published with same name of the report even though the semantic model `.platform` file has a different `displayName`. This is by-design because currently Power BI Desktop **Publish** operation is using a PBIX behind the scenes. 
+
 4. Open the workspace and grab the following attributes:
     * Workspace and semantic model names
         ![workspace and model name copy](resources/img/workspaceandmodelnames.png)
@@ -147,16 +148,16 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
     |   └── definition.pbir
     ```
 
-    > [!TIP]
-    > * `byConnection` Specifies a connection to a semantic model in a Fabric workspace by using a connection string. When a byConnection reference is used, Power BI Desktop open the report in **Live Connect** mode therefore the semantic model is not opened for edit.
-    > * More details about `definition.pbir` file in [documentation](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-report?tabs=v2%2Cdesktop#definitionpbir).
+> [!TIP]
+> * `byConnection` Specifies a connection to a semantic model in a Fabric workspace by using a connection string. When a byConnection reference is used, Power BI Desktop open the report in **Live Connect** mode therefore the semantic model is not opened for edit.
+> * More details about `definition.pbir` file in [documentation](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-report?tabs=v2%2Cdesktop#definitionpbir).
 
 6. Open the `definition-live.pbir` with Power BI Desktop and notice that now the semantic model is not opened for edit but instead the report is **Live Connected** to the semantic model in the Fabric workspace.
 
     ![report live connect](resources/img/report-liveconnect.png)
 
-    > [!TIP]
-    > Including multiple *.pbir files is especially useful when switching between a local semantic model and a published one, allowing flexibility in development and testing. 
+> [!TIP]
+> Including multiple *.pbir files is especially useful when switching between a local semantic model and a published one, allowing flexibility in development and testing. 
     
 ## 5. Copy semantic model objects using TMDL files
 
@@ -166,14 +167,14 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 
 1. Copy the [`resources/tmdl/Time Intelligence.tmdl`](resources/tmdl/Time%20Intelligence.tmdl) TMDL file to the `Sales.SemanticModel\definition\tables` folder.
 2. If you currently have Sales.pbip open in Power BI Desktop, please close it.
-    > [!TIP]
-    > Currently, Power BI Desktop does not detect changes made to PBIP files using external tools or code editors. If you modify any PBIP file and want to see those changes reflected in Power BI Desktop, you must close and reopen the PBIP project.
+> [!TIP]
+> Currently, Power BI Desktop does not detect changes made to PBIP files using external tools or code editors. If you modify any PBIP file and want to see those changes reflected in Power BI Desktop, you must close and reopen the PBIP project.
 3. Open `Sales.pbip` in Power BI Desktop and verify that the semantic model now includes the new **Time Intelligence** calculation group table. A refresh may be required.
    
    ![time intelligence calc group](resources/img/timeintelligence-calcgroup.png)
    
-    > [!TIP]
-    > The **TMDL folder structure makes it easy to reuse and collaborate on semantic models**. You can maintain shared model components (e.g. calendar tables, calculation groups, roles,...) and quickly apply them to multiple semantic models by copying files between definitions.
+> [!TIP]
+> The **TMDL folder structure makes it easy to reuse and collaborate on semantic models**. You can maintain shared model components (e.g. calendar tables, calculation groups, roles,...) and quickly apply them to multiple semantic models by copying files between definitions.
 
 ## 6. Publish from Visual Studio Code
 
@@ -184,8 +185,8 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 1. Open Visual Studio Code and navigate to the **Microsoft Fabric extension**.
    ![microsoft fabric extension](resources/img/microsoftFabric-tab.png)
 
-    > [!TIP]
-    > You can use the [**Switch tenant**](https://github.com/microsoft/vscode-fabric?tab=readme-ov-file#switch-tenants) feature to force a specific account.
+> [!TIP]
+> You can use the [**Switch tenant**](https://github.com/microsoft/vscode-fabric?tab=readme-ov-file#switch-tenants) feature to force a specific account.
 
 2. Filter the workshop workspace.
     
@@ -217,8 +218,8 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 
    ![microsoft fabric extension publish report](resources/img/microsoftFabric-publishreport.png)
 
-    > [!TIP]
-    > By default the extension show all the semantic models in the selected workspace, but you have the option to select to a semantic model in a different workspace.
+> [!TIP]
+> By default the extension show all the semantic models in the selected workspace, but you have the option to select to a semantic model in a different workspace.
 
 > [!IMPORTANT]
 > * When you publish from Visual Studio Code, the **Microsoft Fabric extension only publishes the definition (metadata)** - it does not publish the semantic model data. The extension uses the [Fabric REST CRUD APIs](https://learn.microsoft.com/en-us/rest/api/fabric/articles/item-management/item-management-overview) to deploy the PBIP semantic model or report definition files. 
@@ -255,8 +256,8 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 ### Steps
 
 1. Close Power BI Desktop
-    > [!TIP]
-    > Power BI Desktop does not detect changes made to PBIP files.
+> [!TIP]
+> Power BI Desktop does not detect changes made to PBIP files.
 2. Open **Visual Studio Code**
 3. Go to **File > Open Folder...** and open the PBIP folder.
 4. Open file `Sales.SemanticModel/definition/tables/Sales.tmdl`
