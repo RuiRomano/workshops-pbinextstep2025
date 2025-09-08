@@ -24,18 +24,20 @@ By the end of this workshop, you will:
   - Access to a Fabric / Power BI tenant
     - You can use your existing organizational tenant but you must have admin permissions.
     - Power BI Pro license
-  - Access to a Fabric Capacity or [Trial](https://learn.microsoft.com/en-us/fabric/fundamentals/fabric-trial)
+    - Access to a Fabric Capacity or [Trial](https://learn.microsoft.com/en-us/fabric/fundamentals/fabric-trial)
+    - We can provide a demo account for you if you dont have access to above.
   - [Github account](https://github.com/signup)
-  - [GitHub Copilot Trial](https://github.com/github-copilot/pro)
+  - [Sign-up to GitHub Copilot Trial](https://github.com/github-copilot/pro)
 - Software
   - [Power BI Desktop](https://pbi.onl/download)
-  - [Git for Windows](https://gitforwindows.org/)
   - [Visual Studio Code](https://code.visualstudio.com/download)
     - Install the following extensions in Visual Studio Code:
       - [TMDL extension](https://marketplace.visualstudio.com/items?itemName=analysis-services.TMDL)
       - [Microsoft Fabric extension](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric)
       - [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
-      - [GitHub Copilot chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat)  
+      - [GitHub Copilot chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat)
+      - [Microsoft PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)  
+   - [Git for Windows](https://gitforwindows.org/)
 
 ## Agenda
 
