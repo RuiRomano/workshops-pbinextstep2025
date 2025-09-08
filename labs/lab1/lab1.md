@@ -240,8 +240,8 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 6. If successfull, Visual Studio Code will open the downloaded item folder
 7. Go to windows explorer and open the `NewReportFromService.Report/definition.pbir` file with Power BI Desktop
    
-    > [!TIP]
-    > By design when downloading the definition of a report, it always downloads with a `byConnection` configuration in `definition.pbir` but you can easily change it to a `byPath` targeting a local semantic model folder.
+> [!TIP]
+> By design when downloading the definition of a report, it always downloads with a `byConnection` configuration in `definition.pbir` but you can easily change it to a `byPath` targeting a local semantic model folder.
 
 8. Repeat the previous steps, now to download a semantic model from a workspace.
 
