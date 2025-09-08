@@ -1,0 +1,16 @@
+# Company context
+- This repository contains Power BI reports for COMPANY X
+- COMPANY X sells products from a series of brands across multiple countries.
+- COMPANY X operates physical retail stores and an online platform to reach global customers.
+- COMPANY X offers a wide range of products including clothing, home goods, and electronics.
+- COMPANY X serves millions of customers annually through both digital and in-store experiences.
+- COMPANY X uses data and technology to personalize the shopping experience.
+- COMPANY X partners with manufacturers and suppliers to ensure product quality and availability.
+- COMPANY X invests in sustainable practices across its supply chain and packaging.
+- COMPANY X has a global workforce and local teams to support regional markets.
+- COMPANY X adapts its product offerings to meet the cultural and seasonal needs of each market.
+- COMPANY X runs marketing campaigns tailored to specific audiences across different countries.
+- COMPANY X manages a loyalty program to reward repeat customers and drive retention.
+- COMPANY X constantly evaluates trends to introduce new brands and product lines.
+- COMPANY X integrates inventory and logistics systems for efficient order fulfillment.
+- COMPANY X participates in corporate social responsibility initiatives around the world.

@@ -6,9 +6,9 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 
 
 * Enable the following **Power BI Desktop** preview features:
-  * `Power BI Project (.pbip) save option`
-  * `Store semantic model using TMDL format`
-  * `Store reports using enhanced metadata format (PBIR)`
+  * Power BI Project (.pbip) save option
+  * Store semantic model using TMDL format
+  * Store reports using enhanced metadata format (PBIR)
   ![preview features](resources/img/previewfeatures.png)
 * Ensure you have the following Visual Studio Code extensions
   * [TMDL extension](https://marketplace.visualstudio.com/items?itemName=analysis-services.TMDL)
@@ -28,7 +28,7 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 > This PBIX file uses mock data sourced from CSV files hosted in a public location. When prompted for authentication, select **Anonymous** - the data should refresh without any errors.
 
 2. Go to **File > Save As**.
-3. Choose a folder (e.g. `c:\temp\workshop\pbip`) and select **Save as type**: `Power BI Project Files (*.pbip)`
+3. Choose a folder (e.g. `c:\temp\lab1`) and select **Save as type**: `Power BI Project Files (*.pbip)`
 4. Name it: `Sales.pbip`
 5. **Power BI Desktop** now saves your work as a PBIP folder instead of a single PBIX file.
 6. You can recognize a Power BI Project by the **expanded title bar** in Desktop, which allows you to identify and open the associated folder directly in Windows Explorer.
