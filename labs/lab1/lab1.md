@@ -224,7 +224,7 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 > * When you publish from Visual Studio Code, the **Microsoft Fabric extension only publishes the definition (metadata)** - it does not publish the semantic model data. The extension uses the [Fabric REST CRUD APIs](https://learn.microsoft.com/en-us/rest/api/fabric/articles/item-management/item-management-overview) to deploy the PBIP semantic model or report definition files. 
 >* This approach not only gives you flexibility in choosing what to publish - whether just the report or only the semantic model - but also significantly **boosts development efficiency**. For example, when making a simple update like fixing a DAX measure, you can skip publishing both metadata and data, and avoid waiting for a semantic model refresh in the service.
  
-## 7. Get item definition as PBIP using Visual Studio Code
+## 7. Get item definition from workspace using Visual Studio Code
 
 ✅ **Goal**: Download item definitions from workspace.
 
@@ -248,12 +248,21 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 > [!IMPORTANT]
 > **This download item approach offers significant usability benefits, especially when you need to retrieve the definition of a report or semantic model that is blocked by the standard [Download PBIX feature](https://learn.microsoft.com/en-us/power-bi/create-reports/service-export-to-pbix)**. Unlike the PBIX download, which has limitations - such as not supporting semantic models with incremental refresh - this method is not restricted by those constraints and allows for more flexible access to report components.
 
-## Edit TMDL files
+## 8. Edit semantic model using TMDL
 
 ✅ **Goal**: Edit a semantic model using code and TMDL language.
 
 ### Steps
 
+1. Close Power BI Desktop
+    > [!TIP]
+    > Power BI Desktop does not detect changes made to PBIP files.
+2. Open **Visual Studio Code**
+3. Go to **File > Open Folder...** and open the PBIP folder.
+4. Open file `Sales.SemanticModel/definition/tables/Sales.tmdl`
+5. 
+6. Open 
+7. 
     - extension
     - lineage tag resolution with code actions
     - bread crumb
