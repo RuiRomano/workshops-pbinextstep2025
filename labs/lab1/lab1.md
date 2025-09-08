@@ -23,8 +23,8 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 
 1. Open [Sales.pbix](resources/Sales.pbix) in Power BI Desktop.
    
-    > [!IMPORTANT]
-    > This PBIX file uses mock data sourced from CSV files hosted in a public location. When prompted for authentication, select **Anonymous** - the data should refresh without any errors.
+> [!IMPORTANT]
+> This PBIX file uses mock data sourced from CSV files hosted in a public location. When prompted for authentication, select **Anonymous** - the data should refresh without any errors.
 
 2. Go to **File > Save As**.
 3. Choose a folder (e.g. `c:\temp\workshop\pbip`) and select **Save as type**: `Power BI Project Files (*.pbip)`
@@ -53,15 +53,15 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 2. Go to **File > Open Folder...** and open the saved PBIP folder.
 3. Open and explore the following key files and folders:
    * `*.pbip` - Main entry point file for Power BI Desktop. Notice that it includes a reference to the Report folder. **It's optional** file, Power BI Desktop can also open a report for edit by opening the `definition.pbir`.
-   * `*.Report/definition.pbir` - Contains the overall report definition and key configuration settings such as folder version. Most importantly, it includes a reference to the **semantic model** — typically via a **relative `byPath` reference**, though it can also use an **absolute `byConnection` reference** to connect to a semantic model hosted in a Fabric workspace.
+   * `*.Report/definition.pbir` - Contains the overall report definition and key configuration settings such as folder version. Most importantly, it includes a reference to the **semantic model** — typically via a **relative byPath reference**, though it can also use an **absolute byConnection reference** to connect to a semantic model hosted in a Fabric workspace.
    * `*.Report/definition` - Contains the report definition in [**PBIR format**](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-report?tabs=v2%2Cdesktop#pbir-format), where each component - such as pages, visuals, bookmarks, etc. - is organized into its own **folders** and **JSON files**.
    * `*.SemanticModel/definition` - Contains the semantic model definition in [**TMDL file format**](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-dataset#tmdl-format), where each component - such as tables, roles, cultures, etc. - is organized into its own **folders** and **TMDL documents** using [**TMDL language**](https://learn.microsoft.com/en-us/analysis-services/tmdl/tmdl-overview?view=sql-analysis-services-2025).
    * `*.SemanticModel/.platform` - Fabric platform file for the semantic model and report, containing properties such as `displayName`, `description`, and `logicalId` (required for deployment and Fabric Git integration). 
    * `*.Report/.platform` - Same as semantic model `.platform` file but the `displayName` property is used  to define Power BI Desktop window title name.      
    * `*.SemanticModel/.pbi/cache.abf` - A **local cached copy** of the semantic model’s data is stored as an Analysis Services Backup File (ABF). This file acts as a **user-specific cache** and **should not be shared** among Power BI developers when using Git. Power BI Desktop can open a PBIP project without the `cache.abf` file, but the semantic model will be empty, and a data refresh may be required to test or view the report properly.
   
-    > [!IMPORTANT]
-    > All files and folders are documented in [PBIP documentation](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-overview) including references to their public [JSON-schemas](https://github.com/microsoft/json-schemas/tree/main/fabric). 
+> [!IMPORTANT]
+> All files and folders are documented in [PBIP documentation](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-overview) including references to their public [JSON-schemas](https://github.com/microsoft/json-schemas/tree/main/fabric). 
   
 
 ## 3. Create new report from a template
@@ -186,7 +186,7 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
    ![microsoft fabric extension](resources/img/microsoftFabric-tab.png)
 
 > [!TIP]
-> You can use the [**Switch tenant**](https://github.com/microsoft/vscode-fabric?tab=readme-ov-file#switch-tenants) feature to force a specific account.
+> You can use the [**Switch tenant**](https://github.com/microsoft/vscode-fabric?tab=readme-ov-file#switch-tenants) feature to connect with different account.
 
 2. Filter the workshop workspace.
     
