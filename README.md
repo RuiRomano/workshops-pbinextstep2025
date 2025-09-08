@@ -24,6 +24,7 @@ By the end of this workshop, you will:
   - Access to a Fabric / Power BI tenant
     - You can use your existing organizational tenant but you must have admin permissions.
     - Power BI Pro license
+  - An existing service principal (with `client_id` and `client_secret`) in your Azure tenant or the [permission to create new Entra Application](https://learn.microsoft.com/entra/identity/role-based-access-control/delegate-app-roles) - to be used for CI/CD setup.
   - Access to a Fabric Capacity or [Trial](https://learn.microsoft.com/en-us/fabric/fundamentals/fabric-trial)
   - [Github account](https://github.com/signup)
   - [GitHub Copilot Trial](https://github.com/github-copilot/pro)
