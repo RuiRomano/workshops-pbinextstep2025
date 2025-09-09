@@ -44,3 +44,6 @@ You’ll also learn how to bring modern DevOps practices into your BI projects, 
 **Q: I don't have access to Power BI license and / or Fabric Capacity.**
 
 **A:** Ask the workshop instructors for a demo account.
+
+---
+
