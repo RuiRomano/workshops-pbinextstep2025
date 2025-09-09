@@ -6,36 +6,10 @@ We’ll show you how to accelerate your Power BI development using TMDL and PBIR
 
 You’ll also learn how to bring modern DevOps practices into your BI projects, from seamless CI/CD pipelines to automated deployments, using both built-in features and innovative community-driven solutions.
 
-Whether you’re a BI developer or a data professional looking to modernize your workflow, this workshop will equip you with practical techniques to take your Power BI projects within Microsoft Fabric to the next level.
+## Get started
 
-Learn from people who are directly involved in the design of Power BI developer mode and ask your questions.
-
-By the end of this workshop, you will:
-
-- Gain a solid understanding of Power BI Project file formats (PBIP, TMDL, PBIR) and how they support modern, scalable development workflows.
-
-- Learn how to effectively leverage AI to accelerate and enhance Power BI development, with hands-on, practical examples.
-
-- Understand the value of applying DevOps and CI/CD practices to Power BI projects and walk away with actionable solutions—both out-of-the-box and community-driven.
-
-## Requirements
-
-- Licensing
-  - Access to a Fabric / Power BI tenant
-    - You can use your existing organizational tenant but you must have admin permissions.
-    - Power BI Pro license
-  - Access to a Fabric Capacity or [Trial](https://learn.microsoft.com/en-us/fabric/fundamentals/fabric-trial)
-  - [Github account](https://github.com/signup)
-  - [GitHub Copilot Trial](https://github.com/github-copilot/pro)
-- Software
-  - [Power BI Desktop](https://pbi.onl/download)
-  - [Git for Windows](https://gitforwindows.org/)
-  - [Visual Studio Code](https://code.visualstudio.com/download)
-    - Install the following extensions in Visual Studio Code:
-      - [TMDL extension](https://marketplace.visualstudio.com/items?itemName=analysis-services.TMDL)
-      - [Microsoft Fabric extension](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric)
-      - [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
-      - [GitHub Copilot chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat)  
+- Clone or download this repo to your machine.
+- Ensure you met all the [Requirements](#requirements) before starting the labs.
 
 ## Agenda
 
@@ -44,7 +18,29 @@ By the end of this workshop, you will:
 | **Advanced Power BI Development** | • What is PBIP?<br>• TMDL<br>• PBIR<br>• Automation with AI | [Lab 1 - Power BI Project (PBIP) fundamentals](labs/lab1/lab1.md)<br>[Lab 2 - PBIP & AI](labs/lab2/lab2.md)  | 9:00 - 12:00 |
 | **Power BI & DevOps** | TBD | TBD| 13:30 - 17:00 |
 
-## Resources
+## Requirements
+
+- Licensing
+  - Access to a Fabric / Power BI tenant
+    - You can use your existing organizational tenant but you must have admin permissions.
+    - Power BI Pro license
+    - Access to a Fabric Capacity or [Trial](https://learn.microsoft.com/en-us/fabric/fundamentals/fabric-trial)
+    - We can provide a demo account for you if you dont have access to above.
+  - [Github account](https://github.com/signup)
+  - [Sign-up to GitHub Copilot Trial](https://github.com/github-copilot/pro)
+- Software
+  - [Power BI Desktop](https://pbi.onl/download)
+  - [Visual Studio Code](https://code.visualstudio.com/download)
+    - Install the following extensions in Visual Studio Code:
+      - [TMDL extension](https://marketplace.visualstudio.com/items?itemName=analysis-services.TMDL)
+      - [Microsoft Fabric extension](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric)
+      - [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
+      - [GitHub Copilot chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat)
+      - [Microsoft PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)  
+   - [Git for Windows](https://gitforwindows.org/)
 
 ## FAQ
 
+**Q: I don't have access to Power BI license and / or Fabric Capacity.**
+
+**A:** Ask the workshop instructors for a demo account.
