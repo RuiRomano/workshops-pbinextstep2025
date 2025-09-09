@@ -1,6 +1,6 @@
 # Power BI Project (PBIP) and AI
 
-TODO
+This lab demonstrates how to use Power BI Project (.pbip) and TMDL view to script, preview, and apply semantic model changes; it covers using PBIP, saving TMDL scripts in the project, and using Visual Studio Code with GitHub Copilot (plus a project-level copilot-instructions.md) to batch-edit model documentation and generate measures.
 
 ## 🛠️ Prerequisites
 
