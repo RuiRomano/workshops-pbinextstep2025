@@ -26,6 +26,7 @@ You’ll also learn how to bring modern DevOps practices into your BI projects, 
     - Power BI Pro license
     - Access to a Fabric Capacity or [Trial](https://learn.microsoft.com/en-us/fabric/fundamentals/fabric-trial)
     - We can provide a demo account for you if you dont have access to above.
+  - An existing service principal (with `client_id` and `client_secret`) in your Azure tenant or the [permission to create new Entra Application](https://learn.microsoft.com/entra/identity/role-based-access-control/delegate-app-roles) - to be used for CI/CD setup.
   - [Github account](https://github.com/signup)
   - [Sign-up to GitHub Copilot Trial](https://github.com/github-copilot/pro)
 - Software
@@ -44,3 +45,6 @@ You’ll also learn how to bring modern DevOps practices into your BI projects, 
 **Q: I don't have access to Power BI license and / or Fabric Capacity.**
 
 **A:** Ask the workshop instructors for a demo account.
+
+---
+
