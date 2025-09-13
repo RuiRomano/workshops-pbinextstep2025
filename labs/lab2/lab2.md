@@ -25,8 +25,10 @@ This lab demonstrates how to use Power BI Project (.pbip) and TMDL view to scrip
 3. Choose a folder (e.g. `c:\temp\lab2`) and select **Save as type**: `Power BI Project Files (*.pbip)`
 4. Name it: `Sales.pbip`
 5. Open **TMDL view** tab
-   ![tmdlview](resources/img/tmdlview-tab.png)
+    
+    ![tmdlview](resources/img/tmdlview-tab.png)
 6. Script the expression `Environment` which is a Power BI parameter by dragging it from the model explorer to the code editor.
+    
     ![tmdlview-dragexpression](resources/img/tmdlview-dragexpression.png)
 7. Change the current value of the expression from "DEV" to "PRD"
    
