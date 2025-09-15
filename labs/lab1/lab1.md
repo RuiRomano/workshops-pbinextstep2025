@@ -103,8 +103,8 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 6. Configure the visual placeholders with semantic model fields and build a report similar to the following:
    ![templateReport-filled](resources/img/templateReport-filled.png)
 7. Observe it's using the colors of the theme you picked.
-    > [!TIP]
-    > One of the key benefits of the PBIP format is the ability to customize reports, pages, or visuals using straightforward file operations before opening them in **Power BI Desktop**. This makes it easy to create reusable templates for your development workflows.
+> [!TIP]
+> One of the key benefits of the PBIP format is the ability to customize reports, pages, or visuals using straightforward file operations before opening them in **Power BI Desktop**. This makes it easy to create reusable templates for your development workflows.
 8. Save the report in **Power BI Desktop**, observe that `.platform` file is automatically generated in the report folder.
 9.  Create a new page with some visuals, save your changes, and observe that a new page folder is created inside the report `definition` folder.
 
