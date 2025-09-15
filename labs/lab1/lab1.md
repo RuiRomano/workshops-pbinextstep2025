@@ -88,13 +88,13 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
     └── Sales.pbip
     ```
 
-    > [!TIP]
-    > The template report uses descriptive folder names for pages and visuals. By default, new items like pages are saved with unique IDs by **Power BI Desktop**, but you can rename these folders to use meaningful names for easier navigation and management.
+> [!TIP]
+> The template report uses descriptive folder names for pages and visuals. By default, new items like pages are saved with unique IDs by **Power BI Desktop**, but you can rename these folders to use meaningful names for easier navigation and management.
 
 2. Ensure the `NewReport.Report/definition.pbir` has a valid relative reference to `Sales.SemanticModel` in the `byPath` property. 
 
-    > [!TIP]
-    > The PBIP format supports multiple reports and semantic models within a single folder, similar to a Fabric workspace. You can manage several reports and models together, and it's not necessary to have a separate `.pbip` file for each report - each report can be opened directly from its `.pbir` file inside its respective report folder.
+> [!TIP]
+> The PBIP format supports multiple reports and semantic models within a single folder, similar to a Fabric workspace. You can manage several reports and models together, and it's not necessary to have a separate `.pbip` file for each report - each report can be opened directly from its `.pbir` file inside its respective report folder.
    
 3. Choose a theme file from [`resources/themes`](resources/themes/) and copy its contents into `NewReport.Report/StaticResources/RegisteredResources/theme.json` file within your new report folder.
 4. Open `NewReport.Report/definition.pbir` with **Power BI Desktop**.
