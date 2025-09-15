@@ -192,9 +192,10 @@ Learn more about **TMDL view** in [documentation](https://learn.microsoft.com/en
 
 You’ve now:
 
-* Learned how to use easily AI chats to support your semantic model development together with **TMDL view**
-* Learned how to use **AI Agents** to inspect and modify your Power BI project files
+* Learned how to use easily use AI chats to support your semantic model development together with **TMDL view**.
+* Learned how to use **GitHub Copilot Agent mode** to inspect and modify your Power BI project files.
 
 ## Useful links
 
 * [TMDL view docs](https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-tmdl-view)
+* [GitHub Copilot Overview](https://code.visualstudio.com/docs/copilot/overview)
