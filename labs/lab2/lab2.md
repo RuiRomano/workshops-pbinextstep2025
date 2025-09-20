@@ -55,12 +55,16 @@ This lab shows how AI can assist in your Power BI development - whether it's usi
 8.  Click **Apply** to apply the change to the semantic model 
 > [!TIP]
 > **TMDL view**, unlike PBIP, which follows a code-behind mental model, is based on a **scripting mental model**. In TMDL view, you execute TMDL scripts using the `createOrReplace` command to define or update one or more semantic model objects. This means that scripts created in TMDL view are not automatically updated when you make changes in Model view. This separation is useful - TMDL view can serve as a kind of backup mechanism: before applying a batch of changes to your semantic model, you can save a script version, and easily revert by reapplying that earlier script if needed.
-1.   Notice that you modified a Power Query expression (the expression parameter), Power BI Desktop did not forced a data refresh. This behavior can be very useful when you want to update model queries without triggering a local refresh immediately.
-2.   Copy the TMDL script from the [Time intelligence calculation group](https://community.fabric.microsoft.com/t5/TMDL-Gallery/Time-intelligence-calculation-group/td-p/4770878) **TMDL Gallery** entry and paste it on a new **TMDL view** tab.
-3.   Execute the script and notice that a new calculation group `Time Intelligence` got created. 
+9. Notice that you modified a Power Query expression (the expression parameter), Power BI Desktop did not forced a data refresh. This behavior can be very useful when you want to update model queries without triggering a local refresh immediately.
+
+10. Copy the TMDL script from the [Time intelligence calculation group](https://community.fabric.microsoft.com/t5/TMDL-Gallery/Time-intelligence-calculation-group/td-p/4770878) **TMDL Gallery** entry and paste it on a new **TMDL view** tab.
+
+11. Execute the script and notice that a new calculation group `Time Intelligence` got created.
+    
 > [!TIP]
-> * **TMDL view** can be very useful to easily share semantic model objects between developers. Either from public galleries but also from internal locations such as BI team SharePoint site. 
-1.      Save your PBIP, open the PBIP with **Visual Studio Code** and notice that all the TMDL scripts you create get saved in the `Sales.SemanticModel/TMDLScripts` folder.
+> * **TMDL view** can be very useful to easily share semantic model objects between developers. Either from public galleries but also from internal locations such as BI team SharePoint site.
+
+12. Save your PBIP, open the PBIP with **Visual Studio Code** and notice that all the TMDL scripts you create get saved in the `Sales.SemanticModel/TMDLScripts` folder.
 
 Learn more about **TMDL view** in [documentation](https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-tmdl-view).
 
@@ -70,7 +74,7 @@ Learn more about **TMDL view** in [documentation](https://learn.microsoft.com/en
 
 ### Steps
 
-1. Open [Sales.pbip] in **Power BI Desktop**.
+1. Open `Sales.pbip` in **Power BI Desktop**.
 2. Using **TMDL view** script the table `Sales` and rename the script tab to `Sales_Script`
 3. Save your PBIP
 4. Open **Visual Studio Code** and the PBIP folder
@@ -79,7 +83,7 @@ Learn more about **TMDL view** in [documentation](https://learn.microsoft.com/en
     ![githubcopilot-open](resources/img/githubcopilot-open.png)
 7. Ensure the mode is set to **Edit** to ensure that Copilot only edits the opened file.
    ![githubcopilot-editmode](resources/img/githubcopilot-editmode.png)
-8. Type `set descriptions on all descriptions and measures` and execute.
+8. Type `set descriptions on all columns and measures` and execute.
    ![copilot-description-chat](resources/img/copilot-description-chat.png)   
 9.  **GitHub Copilot** may produce inaccurate or entirely incorrect TMDL scripts - such as the example below. This behavior is expected, as current Large Language Models (LLMs) do not yet fully understand the semantics of TMDL and its scripting language.  
     ![copilot-description-badoutput](resources/img/copilot-description-badoutput.png)    
@@ -183,7 +187,7 @@ Learn more about **TMDL view** in [documentation](https://learn.microsoft.com/en
     ![copilot-pbir-themecolors-diff](resources/img/copilot-pbir-themecolors-diff.png)
 
 11. Close **Power BI Desktop**
-12. Open [Sales.pbip]
+12. Open `Sales.pbip`
 13. Confirm that now all visuals are using theme colors, try to change the theme and notice that colors change.
 > [!TIP]
 > This is a simple, educational example with a small report - and doing it manually would have been easier. But the same approach scales to 100+ reports with +10 pages each, where automation really pays off. 
