@@ -10,7 +10,7 @@ on:
         type: string
         description: The name of the workspace to deploy to
         required: true
-        default: 'next-step-test1'
+        default: 'pbi-next-step'
       environment:
         type: choice
         description: The environment to deploy to
@@ -22,7 +22,7 @@ on:
   
 env:
   environment_name: ${{ github.event.inputs.environment || 'PRD' }}
-  workspace_name: ${{ github.event.inputs.workspace || 'next-step-test1' }}
+  workspace_name: ${{ github.event.inputs.workspace || vars.workspace || 'pbi-next-step' }}
 
 jobs:
 
