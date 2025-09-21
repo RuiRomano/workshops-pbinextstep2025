@@ -1,0 +1,103 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "e859ee4d7c5b10e836d6",
+  "position": {
+    "x": 31.419423692636073,
+    "y": 207.64140875133404,
+    "z": 5000,
+    "height": 191.24866595517608,
+    "width": 672.102454642476,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calendar"
+                    }
+                  },
+                  "Property": "Month Start Date"
+                }
+              },
+              "queryRef": "Calendar.Month Start Date",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dynamic Measure"
+                    }
+                  },
+                  "Property": "Value"
+                }
+              },
+              "queryRef": "Dynamic Measure.Value"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dynamic Measure"
+                    }
+                  },
+                  "Property": "Value (ly)"
+                }
+              },
+              "queryRef": "Dynamic Measure.Value (ly)"
+            }
+          ]
+        },
+        "Y2": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dynamic Measure"
+                    }
+                  },
+                  "Property": "Value Daily Max"
+                }
+              },
+              "queryRef": "Dynamic Measure.Value Daily Max"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Calendar"
+                  }
+                },
+                "Property": "Month Start Date"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "e04b35ccb498a1d0a1ba",
+  "position": {
+    "x": 20,
+    "y": 489,
+    "z": 5000,
+    "height": 213,
+    "width": 216,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "FilterByList507A2DBEC31244C8AAABDE9BA541F723",
+    "query": {
+      "queryState": {
+        "category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Product Code"
+                }
+              },
+              "queryRef": "Product.Product Code",
+              "nativeQueryRef": "Product Code"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

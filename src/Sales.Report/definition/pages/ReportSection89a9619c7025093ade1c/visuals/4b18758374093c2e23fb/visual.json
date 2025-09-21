@@ -1,0 +1,121 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "4b18758374093c2e23fb",
+  "position": {
+    "x": 834.44906498383762,
+    "y": 207.90986804311106,
+    "z": 7000,
+    "height": 272.53050270515911,
+    "width": 428.46290373749241,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Store"
+                    }
+                  },
+                  "Property": "Store"
+                }
+              },
+              "queryRef": "Store.Store"
+            }
+          ]
+        },
+        "Size": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales"
+                    }
+                  },
+                  "Property": "# Customers (with Sales)"
+                }
+              },
+              "queryRef": "Sales.# Customers (with Sales)"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calendar"
+                    }
+                  },
+                  "Property": "Month"
+                }
+              },
+              "queryRef": "Calendar.Month",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales"
+                    }
+                  },
+                  "Property": "Sales Amount"
+                }
+              },
+              "queryRef": "Sales.Sales Amount"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Store"
+                  }
+                },
+                "Property": "Store"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Sales Amount vs # Customers'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

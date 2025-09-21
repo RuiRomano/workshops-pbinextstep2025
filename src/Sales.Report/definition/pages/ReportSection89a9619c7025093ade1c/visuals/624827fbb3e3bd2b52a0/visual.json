@@ -1,0 +1,70 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "624827fbb3e3bd2b52a0",
+  "position": {
+    "x": 765.803224723949,
+    "y": 5.2362613656338395,
+    "z": 12000,
+    "height": 68.0713977532399,
+    "width": 223.85017338084663,
+    "tabOrder": 12000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Sales"
+                        }
+                      },
+                      "Property": "Environment"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(Sales.Environment)"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

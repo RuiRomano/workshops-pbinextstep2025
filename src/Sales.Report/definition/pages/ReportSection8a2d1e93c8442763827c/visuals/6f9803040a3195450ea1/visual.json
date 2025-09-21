@@ -1,0 +1,87 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "6f9803040a3195450ea1",
+  "position": {
+    "x": 32.2508398656215,
+    "y": 416.39417693169094,
+    "z": 6000,
+    "height": 289.54087346024636,
+    "width": 672.25083986562151,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "barChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Category"
+                }
+              },
+              "queryRef": "Product.Category",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Product"
+                }
+              },
+              "queryRef": "Product.Product",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dynamic Measure"
+                    }
+                  },
+                  "Property": "Value"
+                }
+              },
+              "queryRef": "Dynamic Measure.Value"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dynamic Measure"
+                  }
+                },
+                "Property": "Value"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

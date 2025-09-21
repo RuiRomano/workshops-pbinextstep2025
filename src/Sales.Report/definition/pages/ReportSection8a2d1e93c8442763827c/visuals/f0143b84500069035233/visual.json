@@ -1,0 +1,73 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "f0143b84500069035233",
+  "position": {
+    "x": 728.15229563269884,
+    "y": 207.83874580067189,
+    "z": 9000,
+    "height": 191.35498320268758,
+    "width": 526.76371780515115,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "areaChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calendar"
+                    }
+                  },
+                  "Property": "Month Start Date"
+                }
+              },
+              "queryRef": "Calendar.Month Start Date",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dynamic Measure"
+                    }
+                  },
+                  "Property": "Value (ytd)"
+                }
+              },
+              "queryRef": "Dynamic Measure.Value (ytd)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Calendar"
+                  }
+                },
+                "Property": "Month Start Date"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
