@@ -15,8 +15,8 @@ You’ll also learn how to bring modern DevOps practices into your BI projects, 
 
 | Topic | Content | Labs | Time |
 |-------|---------|------|------|
-| **Advanced Power BI Development** | • What is PBIP?<br>• TMDL<br>• PBIR<br>• Automation with AI | [Lab 1 - Power BI Project (PBIP) fundamentals](labs/lab1/lab1.md)<br>[Lab 2 - PBIP & AI](labs/lab2/lab2.md)  | 9:00 - 12:00 |
-| **Power BI & DevOps** | TBD | TBD| 13:30 - 17:00 |
+| **Advanced Power BI Development** | • PBIP fundamentals<br>• Automation with AI | [Lab 1 - Power BI Project (PBIP) fundamentals](labs/lab1/lab1.md)<br>[Lab 2 - PBIP & AI](labs/lab2/lab2.md)  | 9:00 - 11:30 |
+| **Power BI & DevOps** | TBD | TBD| 12:30 - 17:00 |
 
 ## Requirements
 

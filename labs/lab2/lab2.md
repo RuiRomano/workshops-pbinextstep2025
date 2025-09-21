@@ -134,6 +134,10 @@ Learn more about **TMDL view** in [documentation](https://learn.microsoft.com/en
 
 ## 3. PBIR + GitHub Copilot
 
+✅ **Goal**: Learn how to apply a batch update to a Power BI Report using PBIR file format and GitHub Copilot.
+
+### Steps
+
 1. Open [Sales.pbip] in **Power BI Desktop**.
 2. Swap the [Power BI theme](https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-report-themes) to one of the themes available in [lab1/resources/themes](../lab1/resources/themes/).
    
