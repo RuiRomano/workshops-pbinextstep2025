@@ -25,7 +25,8 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 1. Open [resources/Sales.pbix](resources/Sales.pbix) in **Power BI Desktop**.
    
 > [!IMPORTANT]
-> This PBIX file uses mock data sourced from CSV files hosted in a public location. When prompted for authentication, select **Anonymous** - the data should refresh without any errors.
+> * If you downloaded the repo code as a ZIP file, the PBIX file won't be included because it's managed with Git LFS. To get the PBIX, please download it directly from the repository and replace the local file. [Download Sales.pbix](https://github.com/RuiRomano/workshops-pbinextstep2025/raw/refs/heads/main/labs/lab1/resources/Sales.pbix?download=)
+> * This PBIX file uses mock data sourced from CSV files hosted in a public location. When prompted for authentication, select **Anonymous** - the data should refresh without any errors.
 
 2. Go to **File > Save As**.
 3. Choose a folder (e.g. `c:\temp\lab1`) and select **Save as type**: `Power BI Project Files (*.pbip)`
@@ -50,7 +51,7 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 
 ### Steps
 
-1. Open Visual Studio Code
+1. Open **Visual Studio Code**
 2. Go to **File > Open Folder...** and open the saved PBIP folder.
 3. Open and explore the following key files and folders:
    
@@ -58,11 +59,16 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
     |----------------------------------------|-------------|
     | `*.pbip`                               | Main entry point file for **Power BI Desktop**. Includes a reference to the Report folder. **Optional** file; **Power BI Desktop** can also open a report by opening the `definition.pbir`. |
     | `*.Report/definition.pbir`             | Contains the overall report definition and key configuration settings such as folder version. Includes a reference to the **semantic model** — typically via a **relative byPath reference**, but can also use an **absolute byConnection reference** to connect to a model hosted in Fabric. |
-    | `*.Report/definition`                  | Contains the report definition in [**PBIR format**](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-report?tabs=v2%2Cdesktop#pbir-format), where each component (pages, visuals, bookmarks, etc.) is organized into its own **folders** and **JSON files**. |
-    | `*.SemanticModel/definition`           | Contains the semantic model definition in [**TMDL file format**](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-dataset#tmdl-format), where each component (tables, roles, cultures, etc.) is organized into its own **folders** and **TMDL documents** using the [**TMDL language**](https://learn.microsoft.com/en-us/analysis-services/tmdl/tmdl-overview?view=sql-analysis-services-2025). |
-    | `*.SemanticModel/.platform`           | Fabric platform file for the semantic model and report. Contains properties such as `displayName`, `description`, and `logicalId` (required for deployment and Fabric Git integration). |
-    | `*.Report/.platform`                  | Same as the semantic model `.platform` file, but the `displayName` property is used to define the **Power BI Desktop** window title. |
-    | `*.SemanticModel/.pbi/cache.abf`      | A **local cached copy** of the semantic model’s data stored as an Analysis Services Backup File (ABF). Acts as a **user-specific cache** and **should not be shared** via Git. **Power BI Desktop** can open the PBIP without it, but the model will be empty, requiring a data refresh. |
+    | `*.Report/definition`                  | Contains the report definition in [**PBIR format**](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-report?tabs=v2%2Cdesktop#pbir-format), where each report object (pages, visuals, bookmarks, etc.) is organized into its own **folders** and **JSON files**. |
+    | `*.SemanticModel/definition`           | Contains the semantic model definition in [**TMDL file format**](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-dataset#tmdl-format), where each semantic model object (tables, roles, cultures, etc.) is organized into its own **folders** and **TMDL documents** using the [**TMDL language**](https://learn.microsoft.com/en-us/analysis-services/tmdl/tmdl-overview?view=sql-analysis-services-2025). |
+    | `*.SemanticModel/.platform`           | Fabric platform file for the semantic model. Contains properties such as `displayName`, `description`, and `logicalId` (required for deployment and Fabric Git integration). |
+    | `*.Report/.platform`                  | Same as the semantic model `.platform` file, but the `displayName` property is also used to define the **Power BI Desktop** window title. |
+    | `*.SemanticModel/.pbi/cache.abf`      | A **local cached copy** of the semantic model’s data stored as an Analysis Services Backup File (ABF). Acts as a **user-specific cache** and **should not be shared** via Git. **Power BI Desktop** can open the PBIP without it, but the model will be empty, requiring a data refresh. You can safely drop this file whenever you wish to share your development without compromising the data in it.|
+4. Each file includes a `$schema` property at the top of the JSON document, which specifies the document's version. This property also helps clarify the meaning of other properties and can assist in detecting syntax errors when editing the files manually.
+
+    ![pbip-schemas](resources/img/pbip-schemas.png)
+
+    Learn more about PBIP JSON schemas in the [documentation](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-overview#json-file-schemas).
 
 > [!IMPORTANT]
 > * Simply being able to explore PBIP files using a file explorer or code editor is a significant advantage. For example, you no longer need to wait minutes for **Power BI Desktop** to open a PBIX just to review a measure's DAX code or to confirm which database your semantic model is connected to by inspecting a table's Power Query code - Just opent he files and look at the code!
@@ -80,7 +86,7 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
    You should end up with a folder structure like:
 
     ```text    
-    PBIP/
+    Lab1/
     ├── NewReport.Report/
     ├── Sales.Report/
     ├── Sales.SemanticModel/
@@ -89,9 +95,12 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
     ```
 
 > [!TIP]
-> The template report uses descriptive folder names for pages and visuals. By default, new items like pages are saved with unique IDs by **Power BI Desktop**, but you can rename these folders to use meaningful names for easier navigation and management.
+> The template report uses descriptive folder names for pages and visuals. By default, new report objects like pages are saved with unique IDs by **Power BI Desktop**, but you can rename these folders to use meaningful names for easier navigation and source code management.
+> ![pbir-report-friendly-object-names](resources/img/pbir-friendly-names.png)
 
 2. Ensure the `NewReport.Report/definition.pbir` has a valid relative reference to `Sales.SemanticModel` in the `byPath` property. 
+
+![pbip-report-bypath]((resources/img/pbip-report-bypath.png)
 
 > [!TIP]
 > The PBIP format supports multiple reports and semantic models within a single folder, similar to a Fabric workspace. You can manage several reports and models together, and it's not necessary to have a separate `.pbip` file for each report - each report can be opened directly from its `.pbir` file inside its respective report folder.
@@ -105,8 +114,8 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 7. Observe it's using the colors of the theme you picked.
 > [!TIP]
 > One of the key benefits of the PBIP format is the ability to customize reports, pages, or visuals using straightforward file operations before opening them in **Power BI Desktop**. This makes it easy to create reusable templates for your development workflows.
-8. Save the report in **Power BI Desktop**, observe that `.platform` file is automatically generated in the report folder.
-9.  Create a new page with some visuals, save your changes, and observe that a new page folder is created inside the report `definition` folder.
+1. Save the report in **Power BI Desktop**, observe that `.platform` file is automatically generated in the report folder.
+2.  Create a new page with some visuals, save your changes, and observe that a new page folder is created inside the report `definition` folder.
 
 ## 4. Connect a report to a semantic model in service
 
