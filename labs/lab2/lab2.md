@@ -20,19 +20,18 @@ This lab shows how AI can assist in your Power BI development - whether it's usi
 
 ### Steps
 
-1. Open [resources/Sales.pbix](/resources/Sales.pbix) in **Power BI Desktop**.
-> [!IMPORTANT]
-> It's a different PBIX from **lab1**.
-1. Go to **File > Save As**, 
-2. Choose a folder (e.g. `c:\temp\lab2`) and select **Save as type**: `Power BI Project Files (*.pbip)`
-3. Name it: `Sales.pbip`
-4. Open **TMDL view** tab
+1. Open [lab2/resources/Sales.pbix](/resources/Sales.pbix) in **Power BI Desktop**. (**Note:** it's a different file from **Lab1**.)
+2. Go to **File > Save As**, 
+3. Choose a folder (e.g. `c:\temp\lab2`) and select **Save as type**: `Power BI Project Files (*.pbip)`
+4. Name it: `Sales.pbip`
+5. Open **TMDL view** tab
     
     ![tmdlview](resources/img/tmdlview-tab.png)
-5. Script the expression `Environment` which is a Power BI parameter by dragging it from the model explorer to the code editor.
+
+6. Script the expression `Environment` - which is a semantic model parameter - by dragging it from the model explorer into the code editor.
     
     ![tmdlview-dragexpression](resources/img/tmdlview-dragexpression.png)
-6. Change the current value of the expression from "DEV" to "PRD"
+7. Change the current value of the expression from "DEV" to "PRD"
    
    The script should look like this:
 
@@ -51,22 +50,18 @@ This lab shows how AI can assist in your Power BI development - whether it's usi
 
             annotation PBI_ResultType = Text
    ```
-7. Click **Preview** to display a code diff of the impact to the semantic model before executing the script.  
-8.  Click **Apply** to apply the change to the semantic model 
+8. Click **Preview** to display a code diff of the impact to the semantic model before executing the script. **Preview** is very helpful to let you better understand the impact of the script to the model before execution.
+9. Click **Apply** to apply the change to the semantic model 
 > [!TIP]
-> **TMDL view**, unlike PBIP, which follows a code-behind mental model, is based on a **scripting mental model**. In TMDL view, you execute TMDL scripts using the `createOrReplace` command to define or update one or more semantic model objects. This means that scripts created in TMDL view are not automatically updated when you make changes in Model view. This separation is useful - TMDL view can serve as a kind of backup mechanism: before applying a batch of changes to your semantic model, you can save a script version, and easily revert by reapplying that earlier script if needed.
-1. Notice that you modified a Power Query expression (the expression parameter), Power BI Desktop did not forced a data refresh. This behavior can be very useful when you want to update model queries without triggering a local refresh immediately.
+> **TMDL view** follows a **scripting mental model**. In TMDL view, you execute TMDL scripts using the `createOrReplace` command to define or update one or more semantic model objects. This means that scripts created in TMDL view are not automatically updated when you make changes in others Power BI Desktop views. 
+10. Notice that you modified a Power Query expression (the expression parameter), Power BI Desktop did not forced a data refresh. This behavior is by design and can be very useful when you want to update model queries without being forced to refresh your model. 
+11. Create a new **TMDL view** tab.
+12. Open the [Time intelligence calculation group](https://community.fabric.microsoft.com/t5/TMDL-Gallery/Time-intelligence-calculation-group/td-p/4770878) **TMDL Gallery** entry, copy the code and paste it on the new tab.
+13. Execute the script and notice that a new calculation group `Time Intelligence` got created.
+14. Save qnd open the PBIP with **Visual Studio Code**, notice that all the TMDL scripts you created are saved in the `Sales.SemanticModel/TMDLScripts` folder.
 
-2.  Copy the TMDL script from the [Time intelligence calculation group](https://community.fabric.microsoft.com/t5/TMDL-Gallery/Time-intelligence-calculation-group/td-p/4770878) **TMDL Gallery** entry and paste it on a new **TMDL view** tab.
-
-3.  Execute the script and notice that a new calculation group `Time Intelligence` got created.
-    
 > [!TIP]
-> * **TMDL view** can be very useful to easily share semantic model objects between developers. Either from public galleries but also from internal locations such as BI team SharePoint site.
-
-12. Save your PBIP, open the PBIP with **Visual Studio Code** and notice that all the TMDL scripts you create get saved in the `Sales.SemanticModel/TMDLScripts` folder.
-
-Learn more about **TMDL view** in [documentation](https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-tmdl-view).
+> * **TMDL view** can be very useful to ease collaboration and sharing of semantic model objects between developers and community. Either from public galleries such as [TMDL gallery](https://community.fabric.microsoft.com/t5/TMDL-Gallery/) or private locations such as BI team SharePoint site.
 
 ## 2. Batch changes with TMDL view + GitHub Copilot
 
