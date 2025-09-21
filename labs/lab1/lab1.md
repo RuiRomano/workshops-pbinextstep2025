@@ -492,11 +492,11 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 
 You’ve now:
 
-* Worked with PBIP and its folder structure
-* Manipulated TMDL and PBIR file structures
-* Granular deployment from Visual Studio Code
-* Manual code edits over TMDL and PBIR files
-* Batch changes with a script on top of a PBIR report
+* Understood PBIP files and its folder structure.
+* Manipulated and edited TMDL and PBIR files.
+* Granular report and semantic model deployment from **Visual Studio Code**.
+* Download items from Fabric workspace using **Visual Studio Code**.
+* Batch change a report using a script.
 
 ## Useful links
 
