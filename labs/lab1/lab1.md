@@ -96,11 +96,11 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 
 > [!TIP]
 > The template report uses descriptive folder names for pages and visuals. By default, new report objects like pages are saved with unique IDs by **Power BI Desktop**, but you can rename these folders to use meaningful names for easier navigation and source code management.
-> ![pbir-report-friendly-object-names](resources/img/pbir-friendly-names.png)
+> <br>![pbir-report-friendly-object-names](resources/img/pbir-friendly-names.png)
 
 2. Ensure the `NewReport.Report/definition.pbir` has a valid relative reference to `Sales.SemanticModel` in the `byPath` property. 
 
-![pbip-report-bypath]((resources/img/pbip-report-bypath.png)
+![pbip-report-bypath](resources/img/pbip-report-bypath.png)
 
 > [!TIP]
 > The PBIP format supports multiple reports and semantic models within a single folder, similar to a Fabric workspace. You can manage several reports and models together, and it's not necessary to have a separate `.pbip` file for each report - each report can be opened directly from its `.pbir` file inside its respective report folder.
