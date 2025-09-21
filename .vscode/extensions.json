@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "analysis-services.tmdl",
+        "fabric.vscode-fabric",
+        "github.copilot",
+        "github.copilot-chat",
+        "ms-vscode.powershell",
+        "github.vscode-github-actions",
+        "github.vscode-pull-request-github",
+        "eamodio.gitlens"
+    ]
+}

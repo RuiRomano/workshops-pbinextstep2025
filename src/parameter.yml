@@ -1,29 +1,14 @@
 
 # Semantic model parameters (find & replace over TMDL M parameter expression)
 
-find_replace:    
-    - find_value: 'expression Environment = "DEV"'
-      replace_value:
-        DEV: 'expression Environment = "DEV"'    
-        PRD: 'expression Environment = "PRD"'        
-      item_type: "SemanticModel"
-      item_name: "Model01"
-    
-    - find_value: 'expression Service = "https://services.odata.org/Northwind/Northwind.svc"'
-      replace_value:
-        DEV: 'expression Service = "https://services.odata.org/Northwind/Northwind.svc"'    
-        PRD: 'expression Service = "https://services.odata.org/Northwind/Northwind.svc"'        
-      item_type: "SemanticModel"
-      item_name: "Model02"
+#find_replace:
 
 # Ensure default page per report (I used the same page name for all first pages)
 
-key_value_replace:    
+key_value_replace:
     - find_key: $..activePageName
       replace_value:
-          DEV: 3cf1cedb01b04a3b132e
-          PRD: 3cf1cedb01b04a3b132e            
+          DEV: ReportSection89a9619c7025093ade1c
+          PRD: ReportSection89a9619c7025093ade1c
       file_path: 
-        - "Report01.Report/definition/pages/pages.json"
-        - "Report02.Report/definition/pages/pages.json"
-        - "Report03.Report/definition/pages/pages.json"
+        - "Sales.Report/definition/pages/pages.json"

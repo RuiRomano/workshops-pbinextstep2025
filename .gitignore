@@ -1,6 +1,2 @@
-**/.pbi/localSettings.json
-**/.pbi/cache.abf
-
-fabric_cicd.*.log
-
+*.log
 _tools/
