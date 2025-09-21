@@ -21,6 +21,8 @@ This lab shows how AI can assist in your Power BI development - whether it's usi
 ### Steps
 
 1. Open [lab2/resources/Sales.pbix](/resources/Sales.pbix) in **Power BI Desktop**. (**Note:** it's a different file from **Lab1**.)
+> [!IMPORTANT]
+> * If you downloaded the repo code as a ZIP file, the PBIX file won't be included because it's managed with Git LFS. To get the PBIX, please download it directly from the repository and replace the local file. [Download Lab 2 Sales.pbix](https://github.com/RuiRomano/workshops-pbinextstep2025/raw/refs/heads/main/labs/lab2/resources/Sales.pbix?download=)
 2. Go to **File > Save As**, 
 3. Choose a folder (e.g. `c:\temp\lab2`) and select **Save as type**: `Power BI Project Files (*.pbip)`
 4. Name it: `Sales.pbip`
@@ -51,14 +53,14 @@ This lab shows how AI can assist in your Power BI development - whether it's usi
             annotation PBI_ResultType = Text
    ```
 8. Click **Preview** to display a code diff of the impact to the semantic model before executing the script. **Preview** is very helpful to let you better understand the impact of the script to the model before execution.
-9. Click **Apply** to apply the change to the semantic model 
+9.  Click **Apply** to apply the change to the semantic model 
 > [!TIP]
 > **TMDL view** follows a **scripting mental model**. In TMDL view, you execute TMDL scripts using the `createOrReplace` command to define or update one or more semantic model objects. This means that scripts created in TMDL view are not automatically updated when you make changes in others Power BI Desktop views. 
-10. Notice that you modified a Power Query expression (the expression parameter), Power BI Desktop did not forced a data refresh. This behavior is by design and can be very useful when you want to update model queries without being forced to refresh your model. 
-11. Create a new **TMDL view** tab.
-12. Open the [Time intelligence calculation group](https://community.fabric.microsoft.com/t5/TMDL-Gallery/Time-intelligence-calculation-group/td-p/4770878) **TMDL Gallery** entry, copy the code and paste it on the new tab.
-13. Execute the script and notice that a new calculation group `Time Intelligence` got created.
-14. Save qnd open the PBIP with **Visual Studio Code**, notice that all the TMDL scripts you created are saved in the `Sales.SemanticModel/TMDLScripts` folder.
+1.  Notice that you modified a Power Query expression (the expression parameter), Power BI Desktop did not forced a data refresh. This behavior is by design and can be very useful when you want to update model queries without being forced to refresh your model. 
+2.  Create a new **TMDL view** tab.
+3.  Open the [Time intelligence calculation group](https://community.fabric.microsoft.com/t5/TMDL-Gallery/Time-intelligence-calculation-group/td-p/4770878) **TMDL Gallery** entry, copy the code and paste it on the new tab.
+4.  Execute the script and notice that a new calculation group `Time Intelligence` got created.
+5.  Save and open the PBIP with **Visual Studio Code**, notice that all the TMDL scripts you created are saved in the `Sales.SemanticModel/TMDLScripts` folder.
 
 > [!TIP]
 > * **TMDL view** can be very useful to ease collaboration and sharing of semantic model objects between developers and community. Either from public galleries such as [TMDL gallery](https://community.fabric.microsoft.com/t5/TMDL-Gallery/) or private locations such as BI team SharePoint site.
@@ -70,23 +72,25 @@ This lab shows how AI can assist in your Power BI development - whether it's usi
 ### Steps
 
 1. Open `Sales.pbip` in **Power BI Desktop**.
-2. Using **TMDL view** script the table `Sales` and rename the script tab to `Sales_Script`
-3. Save your PBIP
-4. Open **Visual Studio Code** and the PBIP folder
-5. Navigate to the TMDL script file `Sales.SemanticModel/TMDLScripts/Sales_Script.tmdl` 
+2. Open **TMDL view**, drag the table `Sales` to the code editor and rename the script tab to `Sales_Script`.
+3. Save your PBIP.
+4. Open the PBIP folder with **Visual Studio Code**.
+5. Navigate to the TMDL script file `Sales.SemanticModel/TMDLScripts/Sales_Script.tmdl`.
 6. Open [**GitHub Copilot chat**](https://docs.github.com/en/copilot/how-tos/use-chat/use-chat-in-ide) by clicking the Copilot icon next to the search bar or pressing `CTRL+SHIFT+I`
     ![githubcopilot-open](resources/img/githubcopilot-open.png)
 7. Ensure the mode is set to **Edit** to ensure that Copilot only edits the opened file.
    ![githubcopilot-editmode](resources/img/githubcopilot-editmode.png)
 8. Type `set descriptions on all columns and measures` and execute.
    ![copilot-description-chat](resources/img/copilot-description-chat.png)   
-9.  **GitHub Copilot** may produce inaccurate or entirely incorrect TMDL scripts - such as the example below. This behavior is expected, as current Large Language Models (LLMs) do not yet fully understand the semantics of TMDL and its scripting language.  
+9.  **GitHub Copilot** may produce inaccurate or entirely incorrect TMDL scripts - such as the example below. This behavior is expected, as current Large Language Models (LLMs) do not yet fully understand the semantics of TMDL and its scripting language. 
+     
     ![copilot-description-badoutput](resources/img/copilot-description-badoutput.png)    
-10. Undo or don't accept **Copilot** changes to go back to the original version of the script.
-11. Copy the file [`resources/copilot-instructions.md`](resources/copilot-instructions.md) into the `.github` directory within your PBIP folder.
+
+10. Click **Undo** to discard **GitHub Copilot** changes and go back to the original version of the script.
+11. Copy the file [`resources/copilot-instructions.md`](resources/copilot-instructions.md) into the `.github/` directory within your PBIP folder.
 
     ```text
-    PBIP/
+    Lab2/
     ├── .github/
     |   └── copilot-instructions.md
     ├── Sales.Report/
@@ -94,7 +98,7 @@ This lab shows how AI can assist in your Power BI development - whether it's usi
     └── Sales.pbip
     ```    
 > [!IMPORTANT]
-> While you can improve **Copilot** output by making your prompts more specific, it requires you to remember to do so every single time. A more reliable approach is to include a custom instructions file in your project, which gives Copilot additional context about PBIP and TMDL.
+> While you can improve **GitHub Copilot** output by making your prompts more specific, it requires you to remember to do so every single time. A more reliable approach is to include a custom instructions file in your project, which gives **GitHub Copilot** additional context on how to work with PBIP files and TMDL language.
 
 12. Repeat **step #8** and notice the difference now with context file. 
 
@@ -102,7 +106,7 @@ This lab shows how AI can assist in your Power BI development - whether it's usi
 
     ![copilot-instructions-reference](resources/img/copilot-instructions-reference.png)
 
-    And this time it should produce valid TMDL and following the guidelines in `copilot-instructions.md`. Notice how its using references to COMPANY details.
+    And this time it should produce valid TMDL, because it's following the guidelines in `copilot-instructions.md`. Notice how its using references to COMPANY details in the description.
 
     ![copilot-description-goodoutput](resources/img/copilot-description-goodoutput.png)
 
@@ -116,20 +120,20 @@ This lab shows how AI can assist in your Power BI development - whether it's usi
     ![copilot-description-test](resources/img/copilot-description-test.png)
     
 > [!IMPORTANT]
-> **TMDL view** enables you to easily script objects from the semantic model into code that AI can manipulate. Understanding this is essential to unlocking your efficiency - because with the right context, you can achieve virtually anything. Moreover, the same principle applies directly to the PBIP TMDL files, allowing for seamless integration and automation at the file level.
+> **TMDL view** enables you to easily script objects from the semantic model into code that AI can edit/generate. Understanding this is essential to unblock your efficiency - because with the right context, you can achieve virtually any automation scenario. 
 
-16. Script `Product` table in **TMDL view** and rename the script tab to `Product_Script`
-17. Open `Sales.SemanticModel/TMDLScripts/Product_Script.tmdl` with **Visual Studio Code**
-18. Open **GitHub Copilot chat**, type `create base measures for columns` and execute.
+16. Open **TMDL view**, drag the table `Product` into the code editor and rename the script tab to `Product_Script`.
+17. Save the PBIP.
+18. Open `Sales.SemanticModel/TMDLScripts/Product_Script.tmdl` with **Visual Studio Code**
+19. Open **GitHub Copilot chat**, type `create base measures for columns` and execute.
     
-    Notice that **Copilot** will create the measures respecting the guidelines of `copilot-instructions.md`
+    Notice that **Copilot** will create the base measures and follow the guidelines in  [`copilot-instructions.md`](resources/copilot-instructions.md) for measure creation.
 
     ![copilot-measures-output](resources/img/copilot-measures-output.png)
 
-
 ## 3. PBIR + GitHub Copilot
 
-✅ **Goal**: Learn how to apply a batch update to a Power BI Report using PBIR file format and GitHub Copilot.
+✅ **Goal**: Learn how to apply a batch update to a Power BI Report using GitHub Copilot.
 
 ### Steps
 
@@ -140,13 +144,13 @@ This lab shows how AI can assist in your Power BI development - whether it's usi
 
    ![copilot-pbir-reportheme](resources/img/copilot-pbir-reportheme.png)
 
-3. Open **Visual Studio Code** and the PBIP folder
+3. Open the PBIP folder with **Visual Studio Code**.
 4. Open [**GitHub Copilot chat**](https://docs.github.com/en/copilot/how-tos/use-chat/use-chat-in-ide) by clicking the Copilot icon next to the search bar or pressing `CTRL+SHIFT+I`
 5. Ensure the mode is set to **Agent** to ensure that Copilot has visibility and can edit the opened PBIP folder
    ![copilot-agent-mode](resources/img/copilot-agent-mode.png)
 > [!TIP]
-> Learn about **Agent mode** where Copilot can analyze all your code folder and edit multiple files. Learn more about Agent mode in the [documentation](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode)
-6. Type in the chat `Analyze the position property of the visual.json files of the Power BI report in Sales.Report folder and build a SVG wireframe with name 'Wireframe.svg'` and execute.
+> In [**Agent mode**](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode) **GitHub Copilot** can analyze all your code folder and apply edits to your files.
+6. Type in the chat `Analyze the position property of ALL the visual.json files of the Power BI report in Sales.Report folder. And build a SVG wireframe with name Wireframe.svg and color the shapes with different colors by visualType.` and execute.
    
     **GitHub Copilot** will read all the visual.json position configuration and build a wireframe of the report as SVG:
 
@@ -172,10 +176,11 @@ This lab shows how AI can assist in your Power BI development - whether it's usi
 > [!TIP]
 > Generating report wireframes can be extremely helpful for documentation or diagnosing performance issues.
 
-7. Now let’s use **GitHub Copilot** to fix our report by resetting all visuals to use theme colors instead of static hex codes, which, as you observed, don’t automatically adapt to new report themes.
-8. In **GitHub Copilot** chat, click on **Attach Context** and select the file [`resources/instructions-pbir-theme-fix.md`](resources/instructions-pbir-theme-fix.md). You can also drag-drop the file to the chat.
+7. Now let’s use **GitHub Copilot** to fix our report by resetting all visuals to use theme colors instead of static hex codes.
+8. Copy the file [`resources/instructions-pbir-theme-fix.md`](resources/instructions-pbir-theme-fix.md) into the PBIP folder.
 9. Close all opened files in **Visual Studio Code**
-10. Type in the chat `Follow attached instructions in instructions-pbir-theme-fix.md and replace the static colors in Sales.Report for theme colors.` and execute.
+10. In **GitHub Copilot** chat, click on **Attach Context** and select the file `instructions-pbir-theme-fix.md`. You can also drag-drop the file to the chat.
+11. Type in the chat `Follow attached instructions and replace the static colors in Sales.Report for theme colors.` and execute.
     
     ![copilot-pbir-themecolors-prompt](resources/img/copilot-pbir-themecolors-prompt.png)
 
@@ -185,9 +190,9 @@ This lab shows how AI can assist in your Power BI development - whether it's usi
 
     ![copilot-pbir-themecolors-diff](resources/img/copilot-pbir-themecolors-diff.png)
 
-11. Close **Power BI Desktop**
-12. Open `Sales.pbip`
-13. Confirm that now all visuals are using theme colors, try to change the theme and notice that colors change.
+12. Close **Power BI Desktop**
+13. Re-open the `Sales.pbip`.
+14. Try to change the report theme and notice that nowcolors of all visuals change.
 > [!TIP]
 > This is a simple, educational example with a small report - and doing it manually would have been easier. But the same approach scales to 100+ reports with +10 pages each, where automation really pays off. 
 
@@ -195,10 +200,11 @@ This lab shows how AI can assist in your Power BI development - whether it's usi
 
 You’ve now:
 
-* Learned how to use easily use AI chats to support your semantic model development together with **TMDL view**.
+* Learned how to use easily and effectively use AI chats to support your semantic model development together with **TMDL view**.
 * Learned how to use **GitHub Copilot Agent mode** to inspect and modify your Power BI project files.
 
 ## Useful links
 
 * [TMDL view docs](https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-tmdl-view)
 * [GitHub Copilot Overview](https://code.visualstudio.com/docs/copilot/overview)
+* [GitHub Copilot Agent Mode](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode)
