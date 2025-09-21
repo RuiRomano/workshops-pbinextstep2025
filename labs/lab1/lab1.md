@@ -38,7 +38,7 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 7. Although **Power BI Desktop** presents the experience as if you're working with a single file, you're actually editing two distinct components: the report and the semantic model, each stored in its own folder within the PBIP structure.
    
     ```text
-    PBIP/
+    Lab1/
     ├── Sales.Report/
     ├── Sales.SemanticModel/
     ├── .gitignore
@@ -105,21 +105,21 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 > [!TIP]
 > The PBIP format supports multiple reports and semantic models within a single folder, similar to a Fabric workspace. You can manage several reports and models together, and it's not necessary to have a separate `.pbip` file for each report - each report can be opened directly from its `.pbir` file inside its respective report folder.
    
-3. Choose a theme file from [`resources/themes`](resources/themes/) and copy its contents into `NewReport.Report/StaticResources/RegisteredResources/theme.json` file within your new report folder.
+3. Choose a theme file from [`resources/themes`](resources/themes/) and copy its contents into `NewReport.Report/StaticResources/RegisteredResources/theme.json` file within your new report folder. 
+> [!TIP]
+> One of the key benefits of the PBIP format is the ability to customize reports, pages, or visuals using straightforward file operations before opening them in **Power BI Desktop**. This makes it easy to create reusable templates for your development workflows.
 4. Open `NewReport.Report/definition.pbir` with **Power BI Desktop**.
 5. Since this is a template report, it contains placeholder visuals. But also opens the **Sales** semantic model for editing.
    ![templateReport](resources/img/templateReport.png)
 6. Configure the visual placeholders with semantic model fields and build a report similar to the following:
    ![templateReport-filled](resources/img/templateReport-filled.png)
 7. Observe it's using the colors of the theme you picked.
-> [!TIP]
-> One of the key benefits of the PBIP format is the ability to customize reports, pages, or visuals using straightforward file operations before opening them in **Power BI Desktop**. This makes it easy to create reusable templates for your development workflows.
-1. Save the report in **Power BI Desktop**, observe that `.platform` file is automatically generated in the report folder.
-2.  Create a new page with some visuals, save your changes, and observe that a new page folder is created inside the report `definition` folder.
+8. Save the report in **Power BI Desktop**, observe that `.platform` file is automatically generated in the report folder.
+9.  Create a new page with some visuals, save your changes, and observe that a new page folder is created inside the report `definition` folder.
 
 ## 4. Connect a report to a semantic model in service
 
-✅ **Goal**: Publish PBIP from **Power BI Desktop** and connect report to semantic model in workspace.
+✅ **Goal**: Publish PBIP from **Power BI Desktop**. And learn about multiple `definition.pbir` files technique.
 
 ### Steps
 
@@ -127,16 +127,14 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 2. Publish the new report to the workspace using **Power BI Desktop** **Publish** option.
    ![desktop publish](resources/img/desktopPublish.png)
 3. The workspace should now have a new report and semantic model inside.
-   
 > [!TIP]
-> Notice that the semantic model was published with same name of the report even though the semantic model `.platform` file has a different `displayName`. This is by-design because currently **Power BI Desktop** **Publish** operation is using a PBIX behind the scenes. 
-
+> Notice that the semantic model was published with same name of the report even though the semantic model `.platform` file has a different `displayName`. This is by-design because currently **Power BI Desktop** **Publish** operation still uses the PBIX publish flow behind the scenes. 
 4. Open the workspace and grab the following attributes:
     * Workspace and semantic model names
         ![workspace and model name copy](resources/img/workspaceandmodelnames.png)
     * Semantic model ID
     ![semanticmodel id](resources/img/semanticmodel-id.png)
-5. Go back to Visual Studio Code and create a new file `definition-live.pbir` inside `NewReport.Report/` folder with the following content:
+5. Go back to **Visual Studio Code** and create a new file `definition-live.pbir` inside `NewReport.Report/` folder with the following content:
    
     Replace the placeholders `[WorkspaceName]`, `[SemanticModelName]` and `[SemanticModelId]` with the attributes from previous step.
 
@@ -155,7 +153,7 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
     The report folder should now include two `*.pbir` files:
 
     ```text    
-    PBIP/
+    Lab1/
     ├── NewReport.Report/
     |   ├── definition/
     |   ├── definition-live.pbir
@@ -171,16 +169,16 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
     ![report live connect](resources/img/report-liveconnect.png)
 
 > [!TIP]
-> Including multiple *.pbir files is especially useful when switching between a local semantic model and a published one, allowing flexibility in development and testing. 
+> Including multiple *.pbir files is especially useful when switching between a local semantic model and a remote model in a Fabric workspace, allowing flexibility in development and testing. 
     
-## 5. Copy semantic model objects using TMDL files
+## 5. Reuse semantic model objects using TMDL files
 
 ✅ **Goal**: Create a time intelligence calculation group by copying the TMDL file to the semantic model definition folder.
 
 ### Steps
 
 1. Copy the [`resources/tmdl/Time Intelligence.tmdl`](resources/tmdl/Time%20Intelligence.tmdl) TMDL file to the `Sales.SemanticModel\definition\tables` folder.
-2. If you currently have Sales.pbip open in **Power BI Desktop**, please close it.
+2. Close **Power BI Desktop**.
 > [!TIP]
 > Currently, **Power BI Desktop** does not detect changes made to PBIP files using external tools or code editors. If you modify any PBIP file and want to see those changes reflected in **Power BI Desktop**, you must close and reopen the PBIP project.
 3. Open `Sales.pbip` in **Power BI Desktop** and verify that the semantic model now includes the new **Time Intelligence** calculation group table. A refresh may be required.
@@ -188,15 +186,16 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
    ![time intelligence calc group](resources/img/timeintelligence-calcgroup.png)
    
 > [!TIP]
-> The **TMDL folder structure makes it easy to reuse and collaborate on semantic models**. You can maintain shared model components (e.g. calendar tables, calculation groups, roles,...) and quickly apply them to multiple semantic models by copying files between definitions.
+> The **TMDL folder structure makes it easy to reuse and collaborate while developing semantic models**. You can maintain shared model components (e.g. calendar tables, calculation groups, roles,...) and quickly apply them to multiple semantic models by copying files between definitions.
 
-## 6. Publish from Visual Studio Code
+## 6. PBIP publish with Visual Studio Code
 
 ✅ **Goal**: Publish report and semantic model from Visual Studio Code using [Microsoft Fabric extension](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric).
 
 ### Steps
 
-1. Open Visual Studio Code and navigate to the **Microsoft Fabric extension**.
+1. Open **Visual Studio Code** and navigate to the **Microsoft Fabric extension**.
+   
    ![microsoft fabric extension](resources/img/microsoftFabric-tab.png)
 
 > [!TIP]
@@ -206,12 +205,12 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
     
     ![microsoft fabric extension filter workspace](resources/img/microsoftFabric-filterworkspace.png)
 
-3. Explore the items in the workspace in Visual Studio Code
+3. Explore the items in the workspace in **Visual Studio Code**
    
    ![microsoft fabric extension treeview](resources/img/microsoftFabric-treeview.png)
 
-4. Go to **File > Open Folder...** and open the saved PBIP folder.
-5. In the Microsoft Fabric extension, expand the "Local folder" node and confirm that each Report (*.Report) and SemanticModel (*.SemanticModel) folder from your PBIP folder is listed in the tree-view.
+4. Go to **File > Open Folder...** and open the `Sales` PBIP folder.
+5. In the **Microsoft Fabric extension**, expand the **Local folder** node and confirm that each Report (*.Report) and SemanticModel (*.SemanticModel) folder from your PBIP folder is listed in the tree-view.
    
    ![microsoft fabric extension local folder](resources/img/microsoftFabric-localfolder.png)
 
@@ -226,9 +225,7 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
     ![microsoft fabric extension success](resources/img/microsoftFabric-success.png)
 
 7. Confirm if the semantic model got published to the workspace.
-8. Repeat the publish operation for the Report. 
-   
-    Power BI reports must be connected to a semantic model; during publishing the process prompts to select the target semantic model in the workspace that the report will connect to.
+8. Repeat the publish operation for the Report. Unlike semantic models, Power BI reports must be connected to a semantic model. **Fabric extension** shall prompt youto select the target semantic model in the workspace that the report will connect to.
 
    ![microsoft fabric extension publish report](resources/img/microsoftFabric-publishreport.png)
 
@@ -236,7 +233,7 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 > By default the extension show all the semantic models in the selected workspace, but you have the option to select to a semantic model in a different workspace.
 
 > [!IMPORTANT]
-> * When you publish from Visual Studio Code, the **Microsoft Fabric extension only publishes the definition (metadata)** - it does not publish the semantic model data. The extension uses the [Fabric REST CRUD APIs](https://learn.microsoft.com/en-us/rest/api/fabric/articles/item-management/item-management-overview) to deploy the PBIP semantic model or report definition files. 
+> * When you publish items from **Visual Studio Code**, the **Microsoft Fabric extension only publishes the definition (metadata)** - it does not publish the semantic model data. The extension uses the [Fabric REST CRUD APIs](https://learn.microsoft.com/en-us/rest/api/fabric/articles/item-management/item-management-overview) to deploy the PBIP semantic model or report definition files. 
 >* This approach not only gives you flexibility in choosing what to publish - whether just the report or only the semantic model - but also significantly **boosts development efficiency**. For example, when making a simple update like fixing a DAX measure, you can skip publishing both metadata and data, and avoid waiting for a semantic model refresh in the service.
  
 ## 7. Get item definition from workspace using Visual Studio Code
@@ -245,15 +242,17 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 
 ### Steps
 
-1. Open the workshop workspace in Fabric.
+1. Open the created Fabric workspace.
 2. Create a new report from a semantic model in the workspace.
    ![workspace new report](resources/img/workspace-newreport.png)
 3. Save the report and name it `NewReportFromService`
-4. Open **Microsoft Fabric extension** in Visual Studio Code and navigate to the workspace.
+4. Open **Microsoft Fabric extension** in **Visual Studio Code** and navigate to the workspace.
 5. Right-click the report `NewReportFromService` and select **Open in Explorer**
+   
    ![microsoft fabric extension open in explorer](resources/img/microsoftFabric-openinexplorer.png)
-6. If successfull, Visual Studio Code will open the downloaded item folder
-7. Go to windows explorer and open the `NewReportFromService.Report/definition.pbir` file with **Power BI Desktop**
+
+6. If successfull, **Visual Studio Code** will open the downloaded item folder.
+7. Go to windows explorer and open the `NewReportFromService.Report/definition.pbir` file with **Power BI Desktop**. Notice the report created in web is now available for edit in local **Power BI Desktop**.
    
 > [!TIP]
 > By design when downloading the definition of a report, it always downloads with a `byConnection` configuration in `definition.pbir`. But you can easily change it to a `byPath` and target a local semantic model folder.
@@ -280,7 +279,7 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
     ![tmdl extension - breadcrumb](resources/img/tmdlextension-breadcrumb.png)
    * **Code formatting** - Keep your TMDL code clean and consistent
     ![tmdl extension - format](resources/img/tmdlextension-format.png)
-6. Create two new measures by duplicating the code of the measure `Sales Qty`
+6. Create two new measures by duplicating the code of the measure `Sales Qty`. Select all the lines of the `Sales Qty` measure and press **SHIFT + ALT + Down arrow**
  
     The TMDL code should look like the following:
 
@@ -322,13 +321,15 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
             lineageTag: c2ff8d96-2f03-4005-84df-91458625b73b
         ...
      ```
-9. The TMDL extension will highlight an error when a duplicate lineage tag is detected. Lineage tags must be unique within their scope — for example, two measures in the same table cannot share the same tag. Fix this by either entering a new unique identifier in the `lineageTag` property or using the TMDL extension’s code action to generate a new lineage tag automatically.
+9. The TMDL extension will highlight an error when a duplicate lineage tag is detected. Lineage tags must be unique within their scope — for example, two measures in the same table cannot share the same tag. Fix this by either entering a new unique identifier in the `lineageTag` property or using the TMDL extension’s **code action** to generate a new lineage tag automatically.
 
     ![tmdl extension - new lineage tag](resources/img/tmdlextension-newlineagetag.png)
 
     Learn more about lineage tags in [documentation](https://learn.microsoft.com/en-us/analysis-services/tom/lineage-tags-for-power-bi-semantic-models?view=sql-analysis-services-2025).
 
-10. Configure the `displayFolder` property on the three measures with value "Qty". You can use the [`ALT+Click`](https://code.visualstudio.com/docs/editing/codebasics#_multiple-selections-multicursor) to edit multiple lines at once.
+10. Configure the `displayFolder` property on the three Quantity measures. 
+    
+    You can edit multiple lines at same time, by using VS Code [multi cursor](https://code.visualstudio.com/docs/editing/codebasics#_multiple-selections-multicursor) feature. Press the **ALT** key and click at the end of line of the `lineageTag` property value of each measure.
     
     Notice the IntelliSense help while you type the property name:
 
@@ -355,9 +356,9 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
      ```
 
 > [!TIP]
-> You can force IntelliSense by pressing `CTRL+SPACE` inside any TMDL object, TMDL extension will show the available objects and properties for that object. 
+> You can force IntelliSense by pressing `CTRL+SPACE` inside any TMDL object, TMDL extension will show the available objects and properties the object in context.
 
-11. Save the TMDL file in Visual Studio Code and open the `Sales.pbip` with **Power BI Desktop** to confirm and test the new created measures.
+11. Save the edited files in **Visual Studio Code** and open the `Sales.pbip` with **Power BI Desktop** to test new created measures using TMDL.
 
 > [!IMPORTANT]
 > While this example was simple, it demonstrates the potential of direct TMDL editing for large code changes or simple refactorings. You can take advantage of everything code editors offer, such as keyboard shortcuts, code duplication with copy & paste, advanced find-and-replace with regular expressions, programmatic edits, and more.
@@ -369,12 +370,18 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 ### Steps
 
 1. Open Sales.pbip with **Power BI Desktop**.
-2. Go to **File > Options and settings > Options > Report settings** and enable **Copy object names when right clicking on report objects**
+2. Go to **File > Options and settings > Options > Report settings** and enable **Copy object names when right clicking on report objects**.
+   
    ![settings - copy report object names](resources/img/settings-copypbirobjectname.png)
+
 3. In the `Sales` page, hide the title from the first bar chart.
+   
    ![pbirdemo-hidetitle](resources/img/pbirdemo-hidetitle.png)
+
 4. Open the **More options** menu in the top-right corner and select **Copy object name**
+   
    ![pbirdemo-copy object name](resources/img/pbirdemo-copyobjectname.png)
+
 5. Save the PBIP.
 6. Open **Visual Studio Code**
 7. Go to **File > Open Folder...** and open the PBIP folder.
@@ -384,7 +391,7 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 
    ![pbir-find report object](resources/img/pbirdemo-findobjectname.png)
    
-9. Open the matched file for edit.
+9.  Open the matched file for edit.
 10. Mouse-hover the `height` property and notice that **Visual Studio Code** shows a tooltip that explains the property.
 
     ![pbir-schematooltip](resources/img/pbirdemo-schematooltip.png)
@@ -405,7 +412,7 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 13. Create a new **PowerShell** script file named `HideVisualTitles.ps1` side by side with the `Sales.pbip`.
 
     ```text
-    PBIP/
+    Lab1/
     ├── Sales.Report/
     ├── Sales.SemanticModel/    
     ├── HideVisualTitles.ps1
@@ -479,7 +486,7 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
     ![pbir-notitle-report](resources/img/pbir-notitle-report.png)
 
 > [!IMPORTANT]
-> This example is educational - it would have been more efficient to hide titles using multi-select on each page. However, if you needed to apply the same change across 50 reports with average of 10 pages each, automating it with a script like the one above and running it against all PBIR report files would be far more efficient.
+> This example is simple and educational - it would have been more efficient to hide titles using multi-select on each page. However, if you needed to apply the same change across 50 reports with average of 10 pages each, automating it with a script like the one above and running it against all PBIR report files would be far more efficient.
 
 ## ✅ Wrap-up
 
