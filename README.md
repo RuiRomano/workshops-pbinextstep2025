@@ -11,6 +11,7 @@ You’ll also learn how to bring modern DevOps practices into your BI projects, 
 - Clone or download this repository to your machine.
   ![clone-repository](labs/lab1/resources/img/clone-repository.png)
 - Ensure you met all the [Requirements](#requirements) before starting the labs.
+- Open the lab documents in your browser for an improved reading experience.
 
 ## Agenda
 
