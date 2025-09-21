@@ -20,7 +20,7 @@ This lab shows how AI can assist in your Power BI development - whether it's usi
 
 ### Steps
 
-1. Open [Sales.pbix](../lab2/resources/Sales.pbix) in **Power BI Desktop**.
+1. Open [resources/Sales.pbix](/resources/Sales.pbix) in **Power BI Desktop**.
 > [!IMPORTANT]
 > It's a different PBIX from **lab1**.
 1. Go to **File > Save As**, 
@@ -55,11 +55,11 @@ This lab shows how AI can assist in your Power BI development - whether it's usi
 8.  Click **Apply** to apply the change to the semantic model 
 > [!TIP]
 > **TMDL view**, unlike PBIP, which follows a code-behind mental model, is based on a **scripting mental model**. In TMDL view, you execute TMDL scripts using the `createOrReplace` command to define or update one or more semantic model objects. This means that scripts created in TMDL view are not automatically updated when you make changes in Model view. This separation is useful - TMDL view can serve as a kind of backup mechanism: before applying a batch of changes to your semantic model, you can save a script version, and easily revert by reapplying that earlier script if needed.
-9. Notice that you modified a Power Query expression (the expression parameter), Power BI Desktop did not forced a data refresh. This behavior can be very useful when you want to update model queries without triggering a local refresh immediately.
+1. Notice that you modified a Power Query expression (the expression parameter), Power BI Desktop did not forced a data refresh. This behavior can be very useful when you want to update model queries without triggering a local refresh immediately.
 
-10. Copy the TMDL script from the [Time intelligence calculation group](https://community.fabric.microsoft.com/t5/TMDL-Gallery/Time-intelligence-calculation-group/td-p/4770878) **TMDL Gallery** entry and paste it on a new **TMDL view** tab.
+2.  Copy the TMDL script from the [Time intelligence calculation group](https://community.fabric.microsoft.com/t5/TMDL-Gallery/Time-intelligence-calculation-group/td-p/4770878) **TMDL Gallery** entry and paste it on a new **TMDL view** tab.
 
-11. Execute the script and notice that a new calculation group `Time Intelligence` got created.
+3.  Execute the script and notice that a new calculation group `Time Intelligence` got created.
     
 > [!TIP]
 > * **TMDL view** can be very useful to easily share semantic model objects between developers. Either from public galleries but also from internal locations such as BI team SharePoint site.

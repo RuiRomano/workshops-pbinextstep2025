@@ -22,7 +22,7 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 
 ### Steps
 
-1. Open [Sales.pbix](resources/Sales.pbix) in **Power BI Desktop**.
+1. Open [resources/Sales.pbix](resources/Sales.pbix) in **Power BI Desktop**.
    
 > [!IMPORTANT]
 > This PBIX file uses mock data sourced from CSV files hosted in a public location. When prompted for authentication, select **Anonymous** - the data should refresh without any errors.
