@@ -25,7 +25,7 @@ Welcome to this lab where you'll get hands-on experience with the **Power BI Pro
 1. Open [resources/Sales.pbix](resources/Sales.pbix) in **Power BI Desktop**.
    
 > [!IMPORTANT]
-> * If you downloaded the repo code as a ZIP file, the PBIX file won't be included because it's managed with Git LFS. To get the PBIX, please download it directly from the repository and replace the local file. [Download Lab 1 Sales.pbix](https://github.com/RuiRomano/workshops-pbinextstep2025/raw/refs/heads/main/labs/lab1/resources/Sales.pbix?download=)
+> * If you downloaded the repo code as a ZIP file, the PBIX file won't be included because it's managed with Git LFS. To get the PBIX, please download it directly from the repository and replace the local file. [Download Lab 1 Sales.pbix](/raw/refs/heads/main/.labs/lab1/resources/Sales.pbix?download=)
 > * This PBIX file uses mock data sourced from CSV files hosted in a public location. When prompted for authentication, select **Anonymous** - the data should refresh without any errors.
 
 2. Go to **File > Save As**.
