@@ -9,7 +9,7 @@ You’ll also learn how to bring modern DevOps practices into your BI projects, 
 ## Get started
 
 - Clone or download this repository to your machine.
-  ![clone-repository](labs/lab1/resources/img/clone-repository.png)
+  ![clone-repository](.labs/lab1/resources/img/clone-repository.png)
 - Ensure you met all the [Requirements](#requirements) before starting the labs.
 - Open the lab documents in your browser for an improved reading experience.
 
@@ -17,8 +17,8 @@ You’ll also learn how to bring modern DevOps practices into your BI projects, 
 
 | Topic | Content | Labs | Time |
 |-------|---------|------|------|
-| **Advanced Power BI Development** | • PBIP fundamentals<br>• Automation with AI | [Lab 1 - Power BI Project (PBIP) fundamentals](labs/lab1/lab1.md)<br>[Lab 2 - PBIP & AI](labs/lab2/lab2.md)  | 9:00 - 11:30 |
-| **Power BI & DevOps** | • Introduction to Git?<br>• Using Git locally with vscode<br>• GitHub Collaboration Workflows<br>• CI/CD Pipelines | [Lab 3 - Introduction to Git with PBIP](labs/lab3/lab3.md)<br>[Lab 4 - PBIP & CI/CD with GitHub Actions](labs/lab4/lab4.md) | 13:30 - 17:00 |
+| **Advanced Power BI Development** | • PBIP fundamentals<br>• Automation with AI | [Lab 1 - Power BI Project (PBIP) fundamentals](.labs/lab1/lab1.md)<br>[Lab 2 - PBIP & AI](.labs/lab2/lab2.md)  | 9:00 - 11:30 |
+| **Power BI & DevOps** | • Introduction to Git?<br>• Using Git locally with vscode<br>• GitHub Collaboration Workflows<br>• CI/CD Pipelines | [Lab 3 - Introduction to Git with PBIP](.labs/lab3/lab3.md)<br>[Lab 4 - PBIP & CI/CD with GitHub Actions](.labs/lab4/lab4.md) | 13:30 - 17:00 |
 
 ## Requirements
 

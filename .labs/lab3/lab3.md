@@ -58,7 +58,7 @@ Ensure that all PBIP related Power BI Desktop preview features are enabled:
 
 Create a new, empty, project folder on your machine, alongside *this* labs workspace. Copy all files/folders from *this* workspace, skipping those:
 
-- `labs/**`
+- `.labs/**`
 - `src/Model*.SemanticModel/**`
 - `src/Report*.Report/**`
 - `src/Report*.pbip`
