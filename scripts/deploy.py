@@ -7,10 +7,10 @@ import os
 #change_log_level("DEBUG")
 
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-parser.add_argument("--spn-auth", default = False)
-parser.add_argument("--workspace", default = "PBINextStep25-DevOps")
-parser.add_argument("--environment", default = "DEV")
-parser.add_argument("--src", default = ".\\src")
+parser.add_argument("--spn-auth", action="store_true", help="Use service principal authentication instead of interactive browser")
+parser.add_argument("--workspace", default="PBINextStep25-DevOps", help="Workspace name")
+parser.add_argument("--environment", default="DEV", help="Environment to deploy to")
+parser.add_argument("--src", default="./src", help="Source directory path")
 
 args = parser.parse_args()
 
@@ -22,7 +22,7 @@ environment = args.environment
 # Authentication (SPN or Interactive)
 
 if (not spn_auth):
-    credential = InteractiveBrowserCredential() 
+    credential = InteractiveBrowserCredential()
 else:
     client_id = os.getenv("FABRIC_CLIENT_ID")
     client_secret = os.getenv("FABRIC_CLIENT_SECRET")
@@ -30,11 +30,11 @@ else:
 
     credential = ClientSecretCredential(client_id=client_id, client_secret=client_secret, tenant_id=tenant_id)
 
-target_workspace = FabricWorkspace(    
-    workspace_name = workspace_name,  
+target_workspace = FabricWorkspace(
+    workspace_name = workspace_name,
     environment = environment,
     repository_directory = src_path,
-    item_type_in_scope = ["SemanticModel", "Report"],     
+    item_type_in_scope = ["SemanticModel", "Report"],
     token_credential = credential,
 )
 

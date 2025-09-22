@@ -1,20 +1,13 @@
 name: bpa
   
 on:
-
-  # push:
-  #   branches:
-  #     - main           
-  #   paths:
-  #     - '**/*.Report/**'
-  #     - '**/*.SemanticModel/**'  
-
   pull_request:
     branches: 
       - main      
     paths:
-      - '**/*.Report/**'
-      - '**/*.SemanticModel/**'
+      - 'src/**'
+      - '.bpa/**'
+      - '.github/workflows/bpa.yml'
   
   workflow_dispatch:
         
@@ -27,8 +20,18 @@ jobs:
         - name: Check out the code
           uses: actions/checkout@v4
 
+        - uses: actions/cache@v4
+          id: cache-tools
+          with:
+            path: |
+              ./.bpa/_tools/
+            key: ${{ runner.os }}-tools
+
         - name: BPA Semantic Models
+          id: bpa-semantic-models
           run: .\.bpa\bpa.ps1 -src @("./src/*.SemanticModel")
       
         - name: BPA Reports
+          if: ${{ success() || steps.bpa-semantic-models.conclusion == 'failure' }}
+          id: bpa-reports
           run: .\.bpa\bpa.ps1 -src @("./src/*.Report")

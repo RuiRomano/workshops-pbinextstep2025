@@ -1,30 +1,34 @@
 name: deploy
-  
-on:       
 
-    
+on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       workspace:
         type: string
+        description: The name of the workspace to deploy to
         required: true
-        default: 'PBIP Demo'
+        default: 'pbi-next-step'
       environment:
-        type: choice        
+        type: choice
+        description: The environment to deploy to
         required: true
         default: 'DEV'
-        options: 
-        - DEV   
-        - PRD 
+        options:
+        - DEV
+        - PRD
   
-env:            
-  environment_name: ${{ github.event.inputs.environment }}  
-  workspace_name: ${{ github.event.inputs.workspace }}  
+env:
+  environment_name: ${{ github.event.inputs.environment || 'PRD' }}
+  workspace_name: ${{ github.event.inputs.workspace || vars.workspace || 'pbi-next-step' }}
 
 jobs:
 
-  deploy:    
+  deploy:
     runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment || 'PRD' }}
 
     steps:
       - name: Check out the code
@@ -35,7 +39,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install Fabric CICD
+      - name: Install fabric-cicd
         run: |
           python -m pip install fabric-cicd
 
@@ -43,7 +47,10 @@ jobs:
         env:
           FABRIC_CLIENT_ID: ${{ secrets.FABRIC_CLIENT_ID }}
           FABRIC_CLIENT_SECRET: ${{ secrets.FABRIC_CLIENT_SECRET }}
-          FABRIC_TENANT_ID: ${{ secrets.FABRIC_TENANT_ID }}          
-        run: 
-          python deploy.py --spn-auth true --workspace "$workspace_name" --environment $environment_name --src "./src"
-      
+          FABRIC_TENANT_ID: ${{ secrets.FABRIC_TENANT_ID }}
+        run: >
+          python scripts/deploy.py
+          --spn-auth
+          --workspace "$workspace_name"
+          --environment "$environment_name"
+          --src "./src"

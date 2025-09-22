@@ -16,9 +16,16 @@ if ($src.Length -eq 0) {
 $toolsPath = "$currentFolder\_tools"
 
 $tools = @(
-    @{"tool" = "TabularEditor"; "downloadUrl" = "https://github.com/TabularEditor/TabularEditor/releases/latest/download/TabularEditor.Portable.zip"; "rulesUrl" = "https://raw.githubusercontent.com/microsoft/Analysis-Services/master/BestPracticeRules/BPARules.json" }
-    ,
-    @{"tool" = "PBIInspector"; "downloadUrl" = "https://github.com/NatVanG/PBI-InspectorV2/releases/latest/download/win-x64-CLI.zip"; "rulesUrl" = "https://raw.githubusercontent.com/NatVanG/PBI-InspectorV2/refs/heads/main/Rules/Base-rules.json" }
+    @{
+        "tool" = "TabularEditor";
+        "downloadUrl" = "https://github.com/TabularEditor/TabularEditor/releases/latest/download/TabularEditor.Portable.zip";
+        "rulesUrl" = "https://raw.githubusercontent.com/microsoft/Analysis-Services/master/BestPracticeRules/BPARules.json"
+    },
+    @{
+        "tool" = "PBIInspector";
+        "downloadUrl" = "https://github.com/NatVanG/PBI-InspectorV2/releases/latest/download/win-x64-CLI.zip";
+        "rulesUrl" = "https://raw.githubusercontent.com/NatVanG/PBI-InspectorV2/refs/heads/main/Rules/Base-rules.json"
+    }
 )
 
 foreach ($tool in $tools) {
@@ -33,7 +40,7 @@ foreach ($tool in $tools) {
 
         New-Item -ItemType Directory -Path $destinationPath -ErrorAction SilentlyContinue | Out-Null            
 
-        Write-Host "Downloading $toolName"
+        Write-Host "Downloading $toolName to $destinationPath"
 
         $zipFile = "$destinationPath\$toolName.zip"
 
