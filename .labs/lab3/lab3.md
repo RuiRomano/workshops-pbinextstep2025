@@ -182,7 +182,7 @@ For the final lab section, we are going to walk through a feature branch workflo
 
 Before we make any further changes, we create a new isolated feature branch. Find the branch indicator on the left side in the status bar and click on the branch name ("main").
 
-![](img/vscode-git-branch.png
+![](img/vscode-git-branch.png)
 
 Then select "Create new branch…" from the upcoming options and enter a new branch name. By convention, since this is an isolated feature branch, your initials should be included in the branch name.
 
