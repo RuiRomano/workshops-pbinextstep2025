@@ -22,7 +22,7 @@ This lab shows how AI can assist in your Power BI development - whether it's usi
 
 1. Open [lab2/resources/Sales.pbix](/resources/Sales.pbix) in **Power BI Desktop**. (**Note:** it's a different file from **Lab1**.)
 > [!IMPORTANT]
-> * If you downloaded the repo code as a ZIP file, the PBIX file won't be included because it's managed with Git LFS. To get the PBIX, please download it directly from the repository and replace the local file. [Download Lab 2 Sales.pbix](https://github.com/RuiRomano/workshops-pbinextstep2025/raw/refs/heads/main/labs/lab2/resources/Sales.pbix?download=)
+> * If you downloaded the repo code as a ZIP file, the PBIX file won't be included because it's managed with Git LFS. To get the PBIX, please download it directly from the repository and replace the local file. [Download Lab 2 Sales.pbix](https://github.com/RuiRomano/workshops-pbinextstep2025/raw/refs/heads/main/.labs/lab2/resources/Sales.pbix?download=)
 2. Go to **File > Save As**, 
 3. Choose a folder (e.g. `c:\temp\lab2`) and select **Save as type**: `Power BI Project Files (*.pbip)`
 4. Name it: `Sales.pbip`
